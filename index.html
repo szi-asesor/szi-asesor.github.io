@@ -1,11 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SZIANZEY ASESOR // TERMINAL ACCESS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;600;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Hello and welcome to my portfolio!</h1>
+
+<div class="crt-overlay"></div>
+<div class="noise-overlay"></div>
+<div class="scanline"></div>
+
+<div id="boot-screen">
+  <div class="boot-text">
+    <p>WEYLAND-YUTANI CORP // NOSTROMO OS v2.19</p>
+    <p>INITIALIZING PERSONNEL DATABASE<span class="dots"></span></p>
+    <p class="boot-line">> LOADING CREW FILE: <span class="highlight">ASESOR, S.</span></p>
+    <p class="boot-line">> AUTHORIZATION: <span class="ok">GRANTED</span></p>
+    <p class="boot-line">> ESTABLISHING UPLINK<span class="dots2"></span></p>
+  </div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-logo">WY // <span>S.ASESOR</span></div>
+  <ul class="nav-links">
+    <li><a href="#home" class="nav-link active" data-section="home">HOME</a></li>
+    <li><a href="#about" class="nav-link" data-section="about">DOSSIER</a></li>
+    <li><a href="#projects" class="nav-link" data-section="projects">LOGS</a></li>
+    <li><a href="#skills" class="nav-link" data-section="skills">SYSTEMS</a></li>
+    <li><a href="#contact" class="nav-link" data-section="contact">TRANSMIT</a></li>
+  </ul>
+  <div class="nav-status">
+    <span class="pulse-dot"></span> SIGNAL: <span id="signal-strength">STABLE</span>
+  </div>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<main>
+
+  <section id="home" class="section hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <p class="pre-title glitch-hover" data-text="// CREW MANIFEST — MU/TH/UR 6000 //">// CREW MANIFEST — MU/TH/UR 6000 //</p>
+      <h1 class="hero-title" data-text="SZIANZEY ASESOR">SZIANZEY ASESOR</h1>
+      <p class="hero-subtitle typewriter" id="typewriter">SOFTWARE ENGINEER // DIGITAL SYSTEMS SPECIALIST</p>
+      <div class="hero-tags">
+        <span class="tag">[ FULL-STACK ]</span>
+        <span class="tag">[ UI/UX ]</span>
+        <span class="tag">[ PROBLEM SOLVER ]</span>
+      </div>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">ACCESS LOGS</a>
+        <a href="#contact" class="btn btn-secondary">OPEN CHANNEL</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>SCROLL TO PROCEED</span>
+      <div class="scroll-arrow">▼</div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">DOSSIER</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-image-wrap">
+        <div class="about-image">
+          <img src="https://via.placeholder.com/400x500/0a0e0a/3ee06f?text=CREW+PHOTO" alt="Szianzey Asesor placeholder photo" />
+          <div class="scan-frame"></div>
+          <div class="id-tag">
+            <p>ID: 240-7X-ASESOR</p>
+            <p>CLEARANCE: LEVEL 4</p>
+            <p>STATUS: <span class="ok">ACTIVE</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <p class="about-lead">
+          Placeholder bio line: a driven developer engineering resilient, elegant
+          software solutions under pressure — much like surviving deep space itself.
+        </p>
+        <p>
+          Placeholder paragraph. Replace this with your real background, experience,
+          and what drives you as a developer/designer. Mention your journey, your
+          specialties, and what kind of problems you like to solve.
+        </p>
+        <p>
+          Placeholder paragraph two. Add education, certifications, or notable
+          milestones here. Keep it concise and confident.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <h3 class="counter" data-target="5">0</h3>
+            <p>YEARS EXPERIENCE</p>
+          </div>
+          <div class="stat-box">
+            <h3 class="counter" data-target="42">0</h3>
+            <p>MISSIONS COMPLETED</p>
+          </div>
+          <div class="stat-box">
+            <h3 class="counter" data-target="15">0</h3>
+            <p>TECHNOLOGIES</p>
+          </div>
+          <div class="stat-box">
+            <h3 class="counter" data-target="99">0</h3>
+            <p>UPTIME %</p>
+          </div>
+        </div>
+
+        <a href="#" class="btn btn-primary" download>DOWNLOAD DOSSIER (CV)</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">MISSION LOGS</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">ALL LOGS</button>
+      <button class="filter-btn" data-filter="web">WEB</button>
+      <button class="filter-btn" data-filter="app">APPLICATIONS</button>
+      <button class="filter-btn" data-filter="design">DESIGN</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card" data-category="web">
+        <div class="project-header">
+          <span class="project-id">LOG_001</span>
+          <span class="project-status ok">DEPLOYED</span>
+        </div>
+        <div class="project-image">
+          <img src="https://via.placeholder.com/500x300/0a0e0a/3ee06f?text=PROJECT+ONE" alt="Project One placeholder image" />
+        </div>
+        <h3>Project Title One</h3>
+        <p>Placeholder description of project one. Explain the problem, your solution, and the impact.</p>
+        <div class="project-tags">
+          <span>React</span><span>Node.js</span><span>MongoDB</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="link-btn">VIEW SOURCE ↗</a>
+          <a href="#" class="link-btn">LIVE DEMO ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="app">
+        <div class="project-header">
+          <span class="project-id">LOG_002</span>
+          <span class="project-status ok">DEPLOYED</span>
+        </div>
+        <div class="project-image">
+          <img src="https://via.placeholder.com/500x300/0a0e0a/3ee06f?text=PROJECT+TWO" alt="Project Two placeholder image" />
+        </div>
+        <h3>Project Title Two</h3>
+        <p>Placeholder description of project two. Explain the tech stack and your specific contributions.</p>
+        <div class="project-tags">
+          <span>Python</span><span>Flask</span><span>PostgreSQL</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="link-btn">VIEW SOURCE ↗</a>
+          <a href="#" class="link-btn">LIVE DEMO ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="design">
+        <div class="project-header">
+          <span class="project-id">LOG_003</span>
+          <span class="project-status pending">IN PROGRESS</span>
+        </div>
+        <div class="project-image">
+          <img src="https://via.placeholder.com/500x300/0a0e0a/3ee06f?text=PROJECT+THREE" alt="Project Three placeholder image" />
+        </div>
+        <h3>Project Title Three</h3>
+        <p>Placeholder description of project three. Talk about the UI/UX process and design decisions.</p>
+        <div class="project-tags">
+          <span>Figma</span><span>CSS3</span><span>UI Design</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="link-btn">VIEW SOURCE ↗</a>
+          <a href="#" class="link-btn">LIVE DEMO ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="web">
+        <div class="project-header">
+          <span class="project-id">LOG_004</span>
+          <span class="project-status ok">DEPLOYED</span>
+        </div>
+        <div class="project-image">
+          <img src="https://via.placeholder.com/500x300/0a0e0a/3ee06f?text=PROJECT+FOUR" alt="Project Four placeholder image" />
+        </div>
+        <h3>Project Title Four</h3>
+        <p>Placeholder description of project four. Replace with your actual project summary.</p>
+        <div class="project-tags">
+          <span>Vue.js</span><span>Firebase</span><span>Tailwind</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="link-btn">VIEW SOURCE ↗</a>
+          <a href="#" class="link-btn">LIVE DEMO ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">SHIP SYSTEMS</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>// FRONTEND SYSTEMS</h3>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>HTML/CSS</span><span>95%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>JavaScript</span><span>90%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>React</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>// BACKEND SYSTEMS</h3>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Node.js</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Python</span><span>75%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Databases</span><span>70%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>// TOOLS & OTHER</h3>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Git/GitHub</span><span>88%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>UI/UX Design</span><span>78%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Problem Solving</span><span>92%</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="terminal-box">
+      <div class="terminal-header">
+        <span></span><span></span><span></span>
+        <p>mu-th-ur_6000.exe</p>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <p>> QUERY: list --skills --format=inline</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">OPEN TRANSMISSION</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="about-lead">Ready to collaborate? Establish a channel below.</p>
+
+        <div class="contact-item">
+          <span class="contact-label">EMAIL</span>
+          <a href="mailto:placeholder@email.com">placeholder@email.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">LOCATION</span>
+          <p>Placeholder City, Placeholder Country</p>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">STATUS</span>
+          <p><span class="pulse-dot"></span> Available for opportunities</p>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-btn">GITHUB</a>
+          <a href="#" class="social-btn">LINKEDIN</a>
+          <a href="#" class="social-btn">TWITTER/X</a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <div class="form-group">
+          <label>CALLSIGN (NAME)</label>
+          <input type="text" name="name" required placeholder="Enter your name" />
+        </div>
+        <div class="form-group">
+          <label>FREQUENCY (EMAIL)</label>
+          <input type="email" name="email" required placeholder="Enter your email" />
+        </div>
+        <div class="form-group">
+          <label>MESSAGE PAYLOAD</label>
+          <textarea name="message" rows="5" required placeholder="Type your message..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary full-width">TRANSMIT MESSAGE</button>
+        <p class="form-status" id="form-status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>WEYLAND-YUTANI CORP © 2026 — "BUILDING BETTER SOFTWARE THROUGH SUPERIOR ENGINEERING"</p>
+  <p class="footer-sub">SZIANZEY ASESOR // ALL SYSTEMS NOMINAL</p>
+</footer>
+
+<button id="back-to-top">▲</button>
+
+<script src="script.js"></script>
 </body>
 </html>
