@@ -1,79 +1,140 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ============ BOOT SCREEN ============ */
-  const bootScreen = document.getElementById('boot-screen');
-  setTimeout(() => {
-    bootScreen.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-  }, 3000);
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ============ RENDER / LOADING SCREEN ============ */
+  const renderScreen = document.getElementById('render-screen');
+  const renderFill = document.getElementById('render-fill');
+  const renderPct = document.getElementById('render-pct');
+
   document.body.style.overflow = 'hidden';
 
-  /* ============ NAVBAR SCROLL EFFECT ============ */
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-    toggleBackToTop();
-    highlightActiveNav();
-  });
+  if (prefersReducedMotion) {
+    renderScreen.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  } else {
+    let pct = 0;
+    const renderInterval = setInterval(() => {
+      pct += Math.random() * 18 + 6;
+      if (pct >= 100) {
+        pct = 100;
+        clearInterval(renderInterval);
+        setTimeout(() => {
+          renderScreen.classList.add('hidden');
+          document.body.style.overflow = 'auto';
+        }, 300);
+      }
+      renderFill.style.width = pct + '%';
+      renderPct.textContent = Math.floor(pct) + '%';
+    }, 180);
+  }
+
+  /* ============ WAVEFORM GENERATION (hero) ============ */
+  const waveBars = document.getElementById('wave-bars');
+  if (waveBars) {
+    const barCount = window.innerWidth < 600 ? 28 : 60;
+    for (let i = 0; i < barCount; i++) {
+      const bar = document.createElement('span');
+      const duration = (1.2 + Math.random() * 1.4).toFixed(2);
+      const delay = (Math.random() * 1.5).toFixed(2);
+      const height = 20 + Math.random() * 80;
+      bar.style.height = height + '%';
+      bar.style.animationDuration = duration + 's';
+      bar.style.animationDelay = delay + 's';
+      waveBars.appendChild(bar);
+    }
+  }
 
   /* ============ MOBILE MENU ============ */
   const hamburger = document.getElementById('hamburger');
-  const navLinks = document.querySelector('.nav-links');
+  const mobileMenu = document.getElementById('mobile-menu');
 
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
   });
 
-  document.querySelectorAll('.nav-link').forEach(link => {
+  document.querySelectorAll('.mobile-link').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');
-      navLinks.classList.remove('active');
+      mobileMenu.classList.remove('active');
     });
   });
 
-  /* ============ SMOOTH SCROLL FOR NAV LINKS ============ */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
+  /* ============ SMOOTH SCROLL FOR NAV / MARKERS ============ */
+  document.querySelectorAll('a[href^="#"], .marker').forEach(el => {
+    el.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href') || ('#' + this.dataset.section);
       const target = document.querySelector(targetId);
       if (target) {
+        e.preventDefault();
         window.scrollTo({
-          top: target.offsetTop - 70,
-          behavior: 'smooth'
+          top: target.offsetTop - 90,
+          behavior: prefersReducedMotion ? 'auto' : 'smooth'
         });
       }
     });
   });
 
-  /* ============ ACTIVE NAV HIGHLIGHT ============ */
+  /* ============ TIMELINE SCRUBBER: progress, playhead, timecode, active marker ============ */
+  const timelineProgress = document.getElementById('timeline-progress');
+  const playhead = document.getElementById('playhead');
+  const timecodeEl = document.getElementById('timecode');
   const sections = document.querySelectorAll('.section');
-  const navItems = document.querySelectorAll('.nav-link');
+  const markers = document.querySelectorAll('.marker');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  const backToTopBtn = document.getElementById('back-to-top');
 
-  function highlightActiveNav() {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
+  const FPS = 30;
+  const TOTAL_SECONDS = 180; // 3-minute "runtime" mapped to full page scroll
+  const TOTAL_FRAMES = FPS * TOTAL_SECONDS;
 
-    navItems.forEach(item => {
-      item.classList.remove('active');
-      if (item.dataset.section === current) {
-        item.classList.add('active');
-      }
-    });
+  function formatTimecode(frame) {
+    const totalSeconds = Math.floor(frame / FPS);
+    const hh = Math.floor(totalSeconds / 3600);
+    const mm = Math.floor((totalSeconds % 3600) / 60);
+    const ss = totalSeconds % 60;
+    const ff = Math.floor(frame % FPS);
+    const pad = (n) => String(n).padStart(2, '0');
+    return `${pad(hh)}:${pad(mm)}:${pad(ss)}:${pad(ff)}`;
   }
+
+  function updateTimeline() {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollFraction = docHeight > 0 ? Math.min(window.scrollY / docHeight, 1) : 0;
+
+    if (timelineProgress) timelineProgress.style.width = (scrollFraction * 100) + '%';
+    if (playhead) playhead.style.left = (scrollFraction * 100) + '%';
+    if (timecodeEl) timecodeEl.textContent = formatTimecode(scrollFraction * TOTAL_FRAMES);
+
+    // Active section detection
+    let current = sections[0] ? sections[0].id : '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 160) {
+        current = section.id;
+      }
+    });
+
+    markers.forEach(m => m.classList.toggle('active', m.dataset.section === current));
+    mobileLinks.forEach(l => l.classList.toggle('active', l.dataset.section === current));
+
+    backToTopBtn.classList.toggle('show', window.scrollY > 500);
+  }
+
+  window.addEventListener('scroll', updateTimeline);
+  window.addEventListener('resize', updateTimeline);
+  updateTimeline();
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+  });
 
   /* ============ TYPEWRITER EFFECT ============ */
   const typewriterEl = document.getElementById('typewriter');
   const phrases = [
-    "SOFTWARE ENGINEER // DIGITAL SYSTEMS SPECIALIST",
-    "FULL-STACK DEVELOPER // PROBLEM SOLVER",
-    "BUILDING RESILIENT DIGITAL SYSTEMS"
+    "Video Editor // Frame by frame storytelling",
+    "Graphic Designer // Visuals with intent",
+    "CS Student // Building the systems behind it"
   ];
   let phraseIndex = 0;
   let charIndex = 0;
@@ -87,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
       charIndex++;
       if (charIndex === currentPhrase.length) {
         isDeleting = true;
-        setTimeout(typeLoop, 2200);
+        setTimeout(typeLoop, 2000);
         return;
       }
     } else {
@@ -99,22 +160,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    const speed = isDeleting ? 30 : 60;
+    const speed = isDeleting ? 25 : 55;
     setTimeout(typeLoop, speed);
   }
 
-  setTimeout(typeLoop, 3200);
+  if (prefersReducedMotion) {
+    typewriterEl.textContent = phrases[0];
+  } else {
+    setTimeout(typeLoop, 1600);
+  }
 
-  /* ============ INTERSECTION OBSERVER: FADE-IN SECTIONS ============ */
-  const observerOptions = { threshold: 0.15 };
-
+  /* ============ SECTION FADE-IN ON SCROLL ============ */
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-  }, observerOptions);
+  }, { threshold: 0.12 });
 
   sections.forEach(section => sectionObserver.observe(section));
 
@@ -129,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         counters.forEach(counter => {
           const target = +counter.dataset.target;
           let count = 0;
-          const increment = target / 60;
+          const increment = Math.max(target / 60, 0.3);
 
           const updateCounter = () => {
             count += increment;
@@ -159,11 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
         skillsAnimated = true;
         skillFills.forEach(fill => {
           const width = fill.dataset.width;
-          setTimeout(() => {
-            fill.style.width = width + '%';
-          }, 150);
+          setTimeout(() => { fill.style.width = width + '%'; }, 150);
         });
-        typeTerminalSkills();
       }
     });
   }, { threshold: 0.3 });
@@ -171,36 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const skillsSection = document.getElementById('skills');
   if (skillsSection) skillObserver.observe(skillsSection);
 
-  /* ============ TERMINAL SKILL PRINTOUT ============ */
-  function typeTerminalSkills() {
-    const terminalBody = document.getElementById('terminal-body');
-    const lines = [
-      "> SCANNING PERSONNEL RECORD...",
-      "> HTML/CSS ......... [ONLINE]",
-      "> JAVASCRIPT ....... [ONLINE]",
-      "> REACT ............ [ONLINE]",
-      "> NODE.JS .......... [ONLINE]",
-      "> PYTHON ........... [ONLINE]",
-      "> DATABASE MODULES . [ONLINE]",
-      "> ALL SYSTEMS NOMINAL. READY FOR DEPLOYMENT."
-    ];
-
-    let lineIndex = 0;
-
-    function printNextLine() {
-      if (lineIndex < lines.length) {
-        const p = document.createElement('p');
-        p.textContent = lines[lineIndex];
-        terminalBody.appendChild(p);
-        lineIndex++;
-        setTimeout(printNextLine, 350);
-      }
-    }
-
-    setTimeout(printNextLine, 400);
-  }
-
-  /* ============ PROJECT FILTERING ============ */
+  /* ============ WORK TRACK FILTERING ============ */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
@@ -213,11 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       projectCards.forEach(card => {
         const category = card.dataset.category;
-        if (filter === 'all' || filter === category) {
-          card.classList.remove('hidden-card');
-        } else {
-          card.classList.add('hidden-card');
-        }
+        card.classList.toggle('hidden-card', !(filter === 'all' || filter === category));
       });
     });
   });
@@ -228,50 +253,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    formStatus.textContent = '> TRANSMITTING...';
+    formStatus.textContent = 'Sending...';
 
     setTimeout(() => {
-      formStatus.textContent = '> MESSAGE RECEIVED. UPLINK CONFIRMED. STANDBY FOR RESPONSE.';
+      formStatus.textContent = "Message sent — I'll get back to you soon.";
       contactForm.reset();
-
-      setTimeout(() => {
-        formStatus.textContent = '';
-      }, 5000);
-    }, 1200);
+      setTimeout(() => { formStatus.textContent = ''; }, 5000);
+    }, 1000);
   });
-
-  /* ============ BACK TO TOP BUTTON ============ */
-  const backToTopBtn = document.getElementById('back-to-top');
-
-  function toggleBackToTop() {
-    backToTopBtn.classList.toggle('show', window.scrollY > 500);
-  }
-
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  /* ============ RANDOM SIGNAL FLICKER (ATMOSPHERE) ============ */
-  const signalEl = document.getElementById('signal-strength');
-  const signalStates = ['STABLE', 'STABLE', 'STABLE', 'FLUCTUATING', 'STABLE'];
-
-  setInterval(() => {
-    const random = signalStates[Math.floor(Math.random() * signalStates.length)];
-    signalEl.textContent = random;
-    signalEl.style.color = random === 'STABLE' ? '#3ee06f' : '#ffb454';
-  }, 6000);
-
-  /* ============ OCCASIONAL SCREEN FLICKER ============ */
-  function randomFlicker() {
-    const delay = 4000 + Math.random() * 8000;
-    setTimeout(() => {
-      document.body.style.opacity = '0.92';
-      setTimeout(() => {
-        document.body.style.opacity = '1';
-        randomFlicker();
-      }, 80);
-    }, delay);
-  }
-  randomFlicker();
 
 });

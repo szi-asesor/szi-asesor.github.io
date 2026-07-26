@@ -3,301 +3,353 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SZIANZEY ASESOR // TERMINAL ACCESS</title>
+<title>Szianzey Asesor — Video Editor · Graphic Designer · CS Student</title>
+<meta name="description" content="Portfolio of Szianzey Asesor — video editor, graphic designer, and computer science student." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;600;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div class="crt-overlay"></div>
-<div class="noise-overlay"></div>
-<div class="scanline"></div>
-
-<div id="boot-screen">
-  <div class="boot-text">
-    <p>WEYLAND-YUTANI CORP // NOSTROMO OS v2.19</p>
-    <p>INITIALIZING PERSONNEL DATABASE<span class="dots"></span></p>
-    <p class="boot-line">> LOADING CREW FILE: <span class="highlight">ASESOR, S.</span></p>
-    <p class="boot-line">> AUTHORIZATION: <span class="ok">GRANTED</span></p>
-    <p class="boot-line">> ESTABLISHING UPLINK<span class="dots2"></span></p>
+<!-- ============ RENDER / LOADING SCREEN ============ -->
+<div id="render-screen">
+  <div class="render-content">
+    <p class="render-label">EXPORTING PORTFOLIO.MP4</p>
+    <div class="render-bar"><div class="render-fill" id="render-fill"></div></div>
+    <p class="render-pct" id="render-pct">0%</p>
   </div>
-  <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
 
-<nav id="navbar">
-  <div class="nav-logo">WY // <span>S.ASESOR</span></div>
-  <ul class="nav-links">
-    <li><a href="#home" class="nav-link active" data-section="home">HOME</a></li>
-    <li><a href="#about" class="nav-link" data-section="about">DOSSIER</a></li>
-    <li><a href="#projects" class="nav-link" data-section="projects">LOGS</a></li>
-    <li><a href="#skills" class="nav-link" data-section="skills">SYSTEMS</a></li>
-    <li><a href="#contact" class="nav-link" data-section="contact">TRANSMIT</a></li>
-  </ul>
-  <div class="nav-status">
-    <span class="pulse-dot"></span> SIGNAL: <span id="signal-strength">STABLE</span>
+<!-- ============ TIMELINE NAV (signature element) ============ -->
+<header id="timeline-nav">
+  <div class="timeline-top">
+    <a href="#home" class="brand">SZIANZEY<span>.</span>ASESOR</a>
+    <div class="timeline-readout">
+      <span class="tc-label">TIMECODE</span>
+      <span class="tc-value" id="timecode">00:00:00:00</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
+
+  <div class="timeline-track" role="navigation" aria-label="Section timeline">
+    <div class="timeline-ruler"></div>
+    <div class="timeline-progress" id="timeline-progress"></div>
+    <div class="playhead" id="playhead"></div>
+    <div class="timeline-markers">
+      <button class="marker active" data-section="home"><span class="marker-dot"></span><span class="marker-label">00 · INTRO</span></button>
+      <button class="marker" data-section="about"><span class="marker-dot"></span><span class="marker-label">01 · ABOUT</span></button>
+      <button class="marker" data-section="work"><span class="marker-dot"></span><span class="marker-label">02 · WORK</span></button>
+      <button class="marker" data-section="skills"><span class="marker-dot"></span><span class="marker-label">03 · SKILLS</span></button>
+      <button class="marker" data-section="contact"><span class="marker-dot"></span><span class="marker-label">04 · CONTACT</span></button>
+    </div>
   </div>
-</nav>
+
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="#home" class="mobile-link" data-section="home">00 — Intro</a>
+    <a href="#about" class="mobile-link" data-section="about">01 — About</a>
+    <a href="#work" class="mobile-link" data-section="work">02 — Work</a>
+    <a href="#skills" class="mobile-link" data-section="skills">03 — Skills</a>
+    <a href="#contact" class="mobile-link" data-section="contact">04 — Contact</a>
+  </nav>
+</header>
 
 <main>
 
+  <!-- ============ HERO ============ -->
   <section id="home" class="section hero">
-    <div class="hero-grid"></div>
+    <div class="hero-waveform" aria-hidden="true">
+      <div class="wave-bars" id="wave-bars"></div>
+    </div>
     <div class="hero-content">
-      <p class="pre-title glitch-hover" data-text="// CREW MANIFEST — MU/TH/UR 6000 //">// CREW MANIFEST — MU/TH/UR 6000 //</p>
-      <h1 class="hero-title" data-text="SZIANZEY ASESOR">SZIANZEY ASESOR</h1>
-      <p class="hero-subtitle typewriter" id="typewriter">SOFTWARE ENGINEER // DIGITAL SYSTEMS SPECIALIST</p>
+      <p class="pre-title">// NOW PLAYING</p>
+      <h1 class="hero-title">SZIANZEY<br>ASESOR</h1>
+      <p class="hero-subtitle typewriter" id="typewriter"></p>
       <div class="hero-tags">
-        <span class="tag">[ FULL-STACK ]</span>
-        <span class="tag">[ UI/UX ]</span>
-        <span class="tag">[ PROBLEM SOLVER ]</span>
+        <span class="tag tag-video">VIDEO EDITOR</span>
+        <span class="tag tag-design">GRAPHIC DESIGNER</span>
+        <span class="tag tag-code">CS STUDENT</span>
       </div>
       <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">ACCESS LOGS</a>
-        <a href="#contact" class="btn btn-secondary">OPEN CHANNEL</a>
+        <a href="#work" class="btn btn-primary">Watch the Reel</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
       </div>
     </div>
     <div class="scroll-indicator">
-      <span>SCROLL TO PROCEED</span>
-      <div class="scroll-arrow">▼</div>
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
+  <!-- ============ ABOUT ============ -->
   <section id="about" class="section">
     <div class="section-header">
       <span class="section-num">01</span>
-      <h2 class="section-title">DOSSIER</h2>
+      <h2 class="section-title">About</h2>
       <div class="section-line"></div>
     </div>
 
     <div class="about-grid">
       <div class="about-image-wrap">
         <div class="about-image">
-          <img src="https://via.placeholder.com/400x500/0a0e0a/3ee06f?text=CREW+PHOTO" alt="Szianzey Asesor placeholder photo" />
-          <div class="scan-frame"></div>
-          <div class="id-tag">
-            <p>ID: 240-7X-ASESOR</p>
-            <p>CLEARANCE: LEVEL 4</p>
-            <p>STATUS: <span class="ok">ACTIVE</span></p>
+          <img src="https://via.placeholder.com/440x520/16161f/8d8ca0?text=YOUR+PHOTO" alt="Placeholder headshot of Szianzey Asesor" />
+          <div class="clip-frame">
+            <span class="clip-corner tl"></span>
+            <span class="clip-corner tr"></span>
+            <span class="clip-corner bl"></span>
+            <span class="clip-corner br"></span>
+          </div>
+          <div class="clip-tag">
+            <p>CLIP_00A.MOV</p>
+            <p>ROLE: <span class="ok">MULTI-DISCIPLINE CREATOR</span></p>
           </div>
         </div>
       </div>
 
       <div class="about-text">
         <p class="about-lead">
-          Placeholder bio line: a driven developer engineering resilient, elegant
-          software solutions under pressure — much like surviving deep space itself.
+          [Placeholder] I cut the story, design the look, and build the system it all runs on —
+          three disciplines, one point of view.
         </p>
         <p>
-          Placeholder paragraph. Replace this with your real background, experience,
-          and what drives you as a developer/designer. Mention your journey, your
-          specialties, and what kind of problems you like to solve.
+          [Placeholder bio] Replace this with your real background: how you got into editing and
+          design, what kind of computer science student you are, and what ties the three together
+          for you. Mention the tools you reach for first and the kind of work you want more of.
         </p>
         <p>
-          Placeholder paragraph two. Add education, certifications, or notable
-          milestones here. Keep it concise and confident.
+          [Placeholder] Add education, certifications, notable clients, awards, or milestones here.
+          Keep it specific — real numbers and real names beat generic claims.
         </p>
 
         <div class="stats-grid">
           <div class="stat-box">
-            <h3 class="counter" data-target="5">0</h3>
-            <p>YEARS EXPERIENCE</p>
+            <h3 class="counter" data-target="40">0</h3>
+            <p>Videos Edited</p>
           </div>
           <div class="stat-box">
-            <h3 class="counter" data-target="42">0</h3>
-            <p>MISSIONS COMPLETED</p>
+            <h3 class="counter" data-target="25">0</h3>
+            <p>Designs Shipped</p>
           </div>
           <div class="stat-box">
-            <h3 class="counter" data-target="15">0</h3>
-            <p>TECHNOLOGIES</p>
+            <h3 class="counter" data-target="12">0</h3>
+            <p>Code Projects</p>
           </div>
           <div class="stat-box">
-            <h3 class="counter" data-target="99">0</h3>
-            <p>UPTIME %</p>
+            <h3 class="counter" data-target="3">0</h3>
+            <p>Years Creating</p>
           </div>
         </div>
 
-        <a href="#" class="btn btn-primary" download>DOWNLOAD DOSSIER (CV)</a>
+        <a href="#" class="btn btn-primary" download>Download Résumé (PDF)</a>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="section">
+  <!-- ============ WORK (unified timeline of tracks) ============ -->
+  <section id="work" class="section">
     <div class="section-header">
       <span class="section-num">02</span>
-      <h2 class="section-title">MISSION LOGS</h2>
+      <h2 class="section-title">Work</h2>
       <div class="section-line"></div>
     </div>
 
+    <p class="section-intro">Every project lives on one of three tracks — solo a track to see just that kind of work, the way you'd isolate a track in an editing timeline.</p>
+
     <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">ALL LOGS</button>
-      <button class="filter-btn" data-filter="web">WEB</button>
-      <button class="filter-btn" data-filter="app">APPLICATIONS</button>
-      <button class="filter-btn" data-filter="design">DESIGN</button>
+      <button class="filter-btn active" data-filter="all">ALL TRACKS</button>
+      <button class="filter-btn track-video" data-filter="video">VIDEO</button>
+      <button class="filter-btn track-design" data-filter="design">DESIGN</button>
+      <button class="filter-btn track-code" data-filter="code">CODE</button>
     </div>
 
     <div class="projects-grid">
 
-      <div class="project-card" data-category="web">
-        <div class="project-header">
-          <span class="project-id">LOG_001</span>
-          <span class="project-status ok">DEPLOYED</span>
-        </div>
+      <div class="project-card" data-category="video">
+        <span class="track-flag track-video"></span>
         <div class="project-image">
-          <img src="https://via.placeholder.com/500x300/0a0e0a/3ee06f?text=PROJECT+ONE" alt="Project One placeholder image" />
+          <img src="https://via.placeholder.com/500x300/16161f/ff5470?text=REEL+CLIP+01" alt="Placeholder thumbnail for a video edit" />
+          <span class="play-badge">▶</span>
+          <span class="duration-badge">02:14</span>
         </div>
-        <h3>Project Title One</h3>
-        <p>Placeholder description of project one. Explain the problem, your solution, and the impact.</p>
-        <div class="project-tags">
-          <span>React</span><span>Node.js</span><span>MongoDB</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="link-btn">VIEW SOURCE ↗</a>
-          <a href="#" class="link-btn">LIVE DEMO ↗</a>
+        <div class="project-body">
+          <span class="project-id">VIDEO · SHORT-FORM</span>
+          <h3>Project Title One</h3>
+          <p>[Placeholder] Describe the brief, your edit style (pacing, color, sound design), and the result — views, client reaction, etc.</p>
+          <div class="project-tags"><span>Premiere Pro</span><span>DaVinci Resolve</span><span>Color Grade</span></div>
+          <div class="project-links">
+            <a href="#" class="link-btn">WATCH ↗</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card" data-category="app">
-        <div class="project-header">
-          <span class="project-id">LOG_002</span>
-          <span class="project-status ok">DEPLOYED</span>
-        </div>
+      <div class="project-card" data-category="video">
+        <span class="track-flag track-video"></span>
         <div class="project-image">
-          <img src="https://via.placeholder.com/500x300/0a0e0a/3ee06f?text=PROJECT+TWO" alt="Project Two placeholder image" />
+          <img src="https://via.placeholder.com/500x300/16161f/ff5470?text=REEL+CLIP+02" alt="Placeholder thumbnail for a video edit" />
+          <span class="play-badge">▶</span>
+          <span class="duration-badge">08:41</span>
         </div>
-        <h3>Project Title Two</h3>
-        <p>Placeholder description of project two. Explain the tech stack and your specific contributions.</p>
-        <div class="project-tags">
-          <span>Python</span><span>Flask</span><span>PostgreSQL</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="link-btn">VIEW SOURCE ↗</a>
-          <a href="#" class="link-btn">LIVE DEMO ↗</a>
+        <div class="project-body">
+          <span class="project-id">VIDEO · LONG-FORM</span>
+          <h3>Project Title Two</h3>
+          <p>[Placeholder] Documentary or long-form YouTube-style edit. Talk about narrative structure and motion graphics used.</p>
+          <div class="project-tags"><span>After Effects</span><span>Motion Graphics</span></div>
+          <div class="project-links">
+            <a href="#" class="link-btn">WATCH ↗</a>
+          </div>
         </div>
       </div>
 
       <div class="project-card" data-category="design">
-        <div class="project-header">
-          <span class="project-id">LOG_003</span>
-          <span class="project-status pending">IN PROGRESS</span>
-        </div>
+        <span class="track-flag track-design"></span>
         <div class="project-image">
-          <img src="https://via.placeholder.com/500x300/0a0e0a/3ee06f?text=PROJECT+THREE" alt="Project Three placeholder image" />
+          <img src="https://via.placeholder.com/500x300/16161f/7c5cff?text=DESIGN+CASE+01" alt="Placeholder thumbnail for a design project" />
         </div>
-        <h3>Project Title Three</h3>
-        <p>Placeholder description of project three. Talk about the UI/UX process and design decisions.</p>
-        <div class="project-tags">
-          <span>Figma</span><span>CSS3</span><span>UI Design</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="link-btn">VIEW SOURCE ↗</a>
-          <a href="#" class="link-btn">LIVE DEMO ↗</a>
+        <div class="project-body">
+          <span class="project-id">DESIGN · BRANDING</span>
+          <h3>Project Title Three</h3>
+          <p>[Placeholder] Problem → process → outcome. Show the identity system: logo, type, color, and where it lives.</p>
+          <div class="project-tags"><span>Illustrator</span><span>Figma</span><span>Brand Identity</span></div>
+          <div class="project-links">
+            <a href="#" class="link-btn">VIEW CASE STUDY ↗</a>
+          </div>
         </div>
       </div>
 
-      <div class="project-card" data-category="web">
-        <div class="project-header">
-          <span class="project-id">LOG_004</span>
-          <span class="project-status ok">DEPLOYED</span>
-        </div>
+      <div class="project-card" data-category="design">
+        <span class="track-flag track-design"></span>
         <div class="project-image">
-          <img src="https://via.placeholder.com/500x300/0a0e0a/3ee06f?text=PROJECT+FOUR" alt="Project Four placeholder image" />
+          <img src="https://via.placeholder.com/500x300/16161f/7c5cff?text=DESIGN+CASE+02" alt="Placeholder thumbnail for a design project" />
         </div>
-        <h3>Project Title Four</h3>
-        <p>Placeholder description of project four. Replace with your actual project summary.</p>
-        <div class="project-tags">
-          <span>Vue.js</span><span>Firebase</span><span>Tailwind</span>
+        <div class="project-body">
+          <span class="project-id">DESIGN · UI/UX</span>
+          <h3>Project Title Four</h3>
+          <p>[Placeholder] App or website UI. Mention research, wireframes, and the final polished screens.</p>
+          <div class="project-tags"><span>Figma</span><span>Prototyping</span><span>UI Design</span></div>
+          <div class="project-links">
+            <a href="#" class="link-btn">VIEW CASE STUDY ↗</a>
+          </div>
         </div>
-        <div class="project-links">
-          <a href="#" class="link-btn">VIEW SOURCE ↗</a>
-          <a href="#" class="link-btn">LIVE DEMO ↗</a>
+      </div>
+
+      <div class="project-card" data-category="code">
+        <span class="track-flag track-code"></span>
+        <div class="project-image">
+          <img src="https://via.placeholder.com/500x300/16161f/29d3c6?text=CODE+PROJECT+01" alt="Placeholder thumbnail for a code project" />
+        </div>
+        <div class="project-body">
+          <span class="project-id">CODE · WEB APP</span>
+          <h3>Project Title Five</h3>
+          <p>[Placeholder] What problem it solves, your role, and the stack. Bonus points if it blends editing/design skills with code.</p>
+          <div class="project-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+          <div class="project-links">
+            <a href="#" class="link-btn">SOURCE ↗</a>
+            <a href="#" class="link-btn">LIVE DEMO ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="code">
+        <span class="track-flag track-code"></span>
+        <div class="project-image">
+          <img src="https://via.placeholder.com/500x300/16161f/29d3c6?text=CODE+PROJECT+02" alt="Placeholder thumbnail for a code project" />
+        </div>
+        <div class="project-body">
+          <span class="project-id">CODE · SCHOOL PROJECT</span>
+          <h3>Project Title Six</h3>
+          <p>[Placeholder] Coursework, hackathon build, or personal tool. Note the concepts you applied (data structures, algorithms, etc).</p>
+          <div class="project-tags"><span>Python</span><span>Data Structures</span></div>
+          <div class="project-links">
+            <a href="#" class="link-btn">SOURCE ↗</a>
+          </div>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- ============ SKILLS ============ -->
   <section id="skills" class="section">
     <div class="section-header">
       <span class="section-num">03</span>
-      <h2 class="section-title">SHIP SYSTEMS</h2>
+      <h2 class="section-title">Skills</h2>
       <div class="section-line"></div>
     </div>
 
     <div class="skills-grid">
       <div class="skill-category">
-        <h3>// FRONTEND SYSTEMS</h3>
+        <h3 class="track-video">// VIDEO TRACK</h3>
         <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>HTML/CSS</span><span>95%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+          <div class="skill-bar-label"><span>Premiere Pro</span><span>90%</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-video" data-width="90"></div></div>
         </div>
         <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>JavaScript</span><span>90%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          <div class="skill-bar-label"><span>DaVinci Resolve</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-video" data-width="80"></div></div>
         </div>
         <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>React</span><span>85%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3>// BACKEND SYSTEMS</h3>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Node.js</span><span>80%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Python</span><span>75%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Databases</span><span>70%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+          <div class="skill-bar-label"><span>After Effects</span><span>75%</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-video" data-width="75"></div></div>
         </div>
       </div>
 
       <div class="skill-category">
-        <h3>// TOOLS & OTHER</h3>
+        <h3 class="track-design">// DESIGN TRACK</h3>
         <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Git/GitHub</span><span>88%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          <div class="skill-bar-label"><span>Figma</span><span>88%</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-design" data-width="88"></div></div>
         </div>
         <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>UI/UX Design</span><span>78%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          <div class="skill-bar-label"><span>Illustrator</span><span>82%</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-design" data-width="82"></div></div>
         </div>
         <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Problem Solving</span><span>92%</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+          <div class="skill-bar-label"><span>Photoshop</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-design" data-width="85"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3 class="track-code">// CODE TRACK</h3>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>JavaScript</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-code" data-width="80"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Python</span><span>78%</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-code" data-width="78"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>React</span><span>70%</span></div>
+          <div class="skill-bar"><div class="skill-fill fill-code" data-width="70"></div></div>
         </div>
       </div>
     </div>
 
-    <div class="terminal-box">
-      <div class="terminal-header">
-        <span></span><span></span><span></span>
-        <p>mu-th-ur_6000.exe</p>
-      </div>
-      <div class="terminal-body" id="terminal-body">
-        <p>> QUERY: list --skills --format=inline</p>
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track">
+        <span>PREMIERE PRO</span><span>·</span><span>DAVINCI RESOLVE</span><span>·</span><span>AFTER EFFECTS</span><span>·</span>
+        <span>FIGMA</span><span>·</span><span>ILLUSTRATOR</span><span>·</span><span>PHOTOSHOP</span><span>·</span>
+        <span>JAVASCRIPT</span><span>·</span><span>PYTHON</span><span>·</span><span>REACT</span><span>·</span><span>GIT</span><span>·</span>
+        <span>PREMIERE PRO</span><span>·</span><span>DAVINCI RESOLVE</span><span>·</span><span>AFTER EFFECTS</span><span>·</span>
+        <span>FIGMA</span><span>·</span><span>ILLUSTRATOR</span><span>·</span><span>PHOTOSHOP</span><span>·</span>
+        <span>JAVASCRIPT</span><span>·</span><span>PYTHON</span><span>·</span><span>REACT</span><span>·</span><span>GIT</span><span>·</span>
       </div>
     </div>
   </section>
 
+  <!-- ============ CONTACT ============ -->
   <section id="contact" class="section">
     <div class="section-header">
       <span class="section-num">04</span>
-      <h2 class="section-title">OPEN TRANSMISSION</h2>
+      <h2 class="section-title">Contact</h2>
       <div class="section-line"></div>
     </div>
 
     <div class="contact-grid">
       <div class="contact-info">
-        <p class="about-lead">Ready to collaborate? Establish a channel below.</p>
+        <p class="about-lead">Have a project in mind? Let's cut something together.</p>
 
         <div class="contact-item">
           <span class="contact-label">EMAIL</span>
@@ -309,30 +361,31 @@
         </div>
         <div class="contact-item">
           <span class="contact-label">STATUS</span>
-          <p><span class="pulse-dot"></span> Available for opportunities</p>
+          <p><span class="pulse-dot"></span> Open for freelance & collab work</p>
         </div>
 
         <div class="social-links">
           <a href="#" class="social-btn">GITHUB</a>
+          <a href="#" class="social-btn">BEHANCE</a>
+          <a href="#" class="social-btn">YOUTUBE</a>
           <a href="#" class="social-btn">LINKEDIN</a>
-          <a href="#" class="social-btn">TWITTER/X</a>
         </div>
       </div>
 
       <form class="contact-form" id="contact-form">
         <div class="form-group">
-          <label>CALLSIGN (NAME)</label>
-          <input type="text" name="name" required placeholder="Enter your name" />
+          <label>NAME</label>
+          <input type="text" name="name" required placeholder="Your name" />
         </div>
         <div class="form-group">
-          <label>FREQUENCY (EMAIL)</label>
-          <input type="email" name="email" required placeholder="Enter your email" />
+          <label>EMAIL</label>
+          <input type="email" name="email" required placeholder="you@email.com" />
         </div>
         <div class="form-group">
-          <label>MESSAGE PAYLOAD</label>
-          <textarea name="message" rows="5" required placeholder="Type your message..."></textarea>
+          <label>MESSAGE</label>
+          <textarea name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary full-width">TRANSMIT MESSAGE</button>
+        <button type="submit" class="btn btn-primary full-width">Send Message</button>
         <p class="form-status" id="form-status"></p>
       </form>
     </div>
@@ -341,11 +394,11 @@
 </main>
 
 <footer>
-  <p>WEYLAND-YUTANI CORP © 2026 — "BUILDING BETTER SOFTWARE THROUGH SUPERIOR ENGINEERING"</p>
-  <p class="footer-sub">SZIANZEY ASESOR // ALL SYSTEMS NOMINAL</p>
+  <p>© 2026 Szianzey Asesor — Video Editor · Graphic Designer · CS Student</p>
+  <p class="footer-sub">Built frame by frame.</p>
 </footer>
 
-<button id="back-to-top">▲</button>
+<button id="back-to-top" aria-label="Back to top">▲</button>
 
 <script src="script.js"></script>
 </body>
