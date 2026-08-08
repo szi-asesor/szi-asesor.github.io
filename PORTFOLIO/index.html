@@ -6,400 +6,286 @@
 <title>Szianzey Asesor — Portfolio</title>
 <meta name="description" content="Portfolio of Szianzey Asesor — developer, designer, editor.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://szi-asesor.github.io/PORTFOLIO/styles.css">
 </head>
 <body>
 
-<!-- ============ RENDER / LOADING SCREEN ============ -->
-<div id="render-screen">
-  <div class="render-content">
-    <p class="render-label">EXPORTING PORTFOLIO.MP4</p>
-    <div class="render-bar"><div class="render-fill" id="render-fill"></div></div>
-    <p class="render-pct" id="render-pct">0%</p>
+  <div class="anchor" aria-hidden="true"><div class="anchor-marker" id="anchorMarker"></div></div>
+  <div class="cursor-bar" id="cursorBar" aria-hidden="true"></div>
+
+  <div class="ink-wrap">
+    <div id="content">
+
+      <header class="top shell">
+        <div class="wordmark">SZIANZEY<span class="accent">.</span></div>
+        <nav class="top-nav mono">
+          <a href="#cinematic">About</a>
+          <a href="#projects">Work</a>
+          <a href="#toolkit">Toolkit</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero shell" id="top">
+        <div class="eyebrow mono">Portfolio — 2026</div>
+        <h1 class="hero-name">Szianzey<br><span class="accent">Asesor</span>.</h1>
+        <p class="hero-sub">Aspiring developer with a habit of finishing what he starts — an honor roll built on late nights, a national research title, and a table tennis paddle for when the debugging gets tense. This is where the code, the edits, and the designs live.</p>
+        <div class="hero-meta mono">
+          <span><span class="dot"></span>Open to student projects</span>
+          <span><span class="dot"></span>Based in the Philippines</span>
+          <span><span class="dot"></span>Scroll to begin ↓</span>
+        </div>
+      </section>
+
+      <!-- ================= CINEMATIC / SCROLLJACKED ZONE ================= -->
+      <div id="cinematic">
+
+        <!-- STAGE 01 — ABOUT -->
+        <section class="stage" id="stage-about" style="height:250vh;">
+          <div class="stage-sticky">
+            <div class="shell">
+              <div class="stage-rail" id="rail-about"><i><b></b></i><i><b></b></i></div>
+              <div class="slide-stack">
+                <div class="slide" data-slide="0">
+                  <div class="slide-eyebrow mono">01 — About</div>
+                  <h3 class="slide-title">I'm Szianzey, a Computer Science student focused on <span class="accent">web development</span>.</h3>
+                  <p class="slide-copy">I like building clear, modern interfaces that balance design and function — and I bring the same discipline from the honor roll into every codebase: show up, log the reps, don't cut corners.</p>
+                </div>
+                <div class="slide" data-slide="1">
+                  <div class="slide-eyebrow mono">01 — Find me</div>
+                  <h3 class="slide-title">Everywhere else I show up.</h3>
+                  <div class="about-socials">
+                    <a href="https://github.com/szi-asesor" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
+                    <a href="https://www.linkedin.com/in/szianzey-f-asesor-4172483a7/" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
+                    <a href="https://www.facebook.com/szianzey.asesor" target="_blank" rel="noopener">Facebook <span class="arrow">↗</span></a>
+                    <a href="https://www.instagram.com/szianzey/" target="_blank" rel="noopener">Instagram <span class="arrow">↗</span></a>
+                    <a href="https://www.tiktok.com/@one_hee" target="_blank" rel="noopener">TikTok <span class="arrow">↗</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STAGE 02 — ACHIEVEMENTS -->
+        <section class="stage" id="stage-ach" style="height:400vh;">
+          <div class="stage-sticky">
+            <div class="shell">
+              <div class="stage-rail" id="rail-ach"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+              <div class="slide-stack">
+                <div class="slide" data-slide="0">
+                  <div class="ach-slide-num mono">Academics</div>
+                  <h3 class="slide-title">Honor Student — <span class="accent">No Fail</span>.</h3>
+                  <p class="slide-copy">Programming means managing massive codebases and complex logic without cutting corners. This record proves I have the study habits, time management, and stamina to learn dense technical concepts without giving up.</p>
+                </div>
+                <div class="slide" data-slide="1">
+                  <div class="ach-slide-num mono">Research</div>
+                  <h3 class="slide-title">JMCFI Research Congress 2025 — <span class="accent">Champion</span>.</h3>
+                  <p class="slide-copy">First place in a research congress that rewarded structured thinking and clear communication under a deadline — the same skills that carry over into shipping real projects.</p>
+                </div>
+                <div class="slide" data-slide="2">
+                  <div class="ach-slide-num mono">Language</div>
+                  <h3 class="slide-title">Best in <span class="accent">Nihongo</span>.</h3>
+                  <p class="slide-copy">A door into Japan's tech industry — access to exclusive research, local cybersecurity threat intelligence, and hardware/software ecosystems from companies like Sony and Nintendo.</p>
+                </div>
+                <div class="slide" data-slide="3">
+                  <div class="ach-slide-num mono">Sport</div>
+                  <h3 class="slide-title">3rd Placer, Table Tennis — <span class="accent">DAPRISA 2024</span>.</h3>
+                  <p class="slide-copy">Competitive sport builds sharp focus and resilience under pressure. Reading an opponent and adapting mid-rally translates directly to high-pressure debugging and staying calm when code breaks.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- STAGE 03 — EARLY BUILDS -->
+        <section class="stage" id="stage-eb" style="height:350vh;">
+          <div class="stage-sticky">
+            <div class="shell">
+              <div class="stage-rail" id="rail-eb"><i><b></b></i><i><b></b></i><i><b></b></i></div>
+              <div class="slide-stack">
+                <div class="slide" data-slide="0">
+                  <div class="eb-slide">
+                    <div>
+                      <div class="slide-eyebrow mono">03 — Early Builds</div>
+                      <h3 class="slide-title">Fashion Blog</h3>
+                      <p class="slide-copy">An HTML/CSS layout activity — styled type, a magazine-style grid.</p>
+                      <a class="eb-cta accent" href="https://szi-asesor.github.io/Prelim/HTML%20Activity/Fashion/index.html" target="_blank" rel="noopener">View the page ↗</a>
+                    </div>
+                    <div class="eb-visual mono">Fashion Blog — 01</div>
+                  </div>
+                </div>
+                <div class="slide" data-slide="1">
+                  <div class="eb-slide">
+                    <div>
+                      <div class="slide-eyebrow mono">03 — Early Builds</div>
+                      <h3 class="slide-title">Wine Festival Schedule</h3>
+                      <p class="slide-copy">A schedule page built with pure HTML/CSS — structured tables, clean hierarchy.</p>
+                      <a class="eb-cta accent" href="https://szi-asesor.github.io/Prelim/HTML%20Activity/Wine%20Festival%20Schedule/" target="_blank" rel="noopener">View the page ↗</a>
+                    </div>
+                    <div class="eb-visual mono">Wine Festival — 02</div>
+                  </div>
+                </div>
+                <div class="slide" data-slide="2">
+                  <div class="eb-slide">
+                    <div>
+                      <div class="slide-eyebrow mono">03 — Early Builds</div>
+                      <h3 class="slide-title">Davie's Burgers</h3>
+                      <p class="slide-copy">A restaurant landing page — the first time I built something that felt like a real product.</p>
+                      <a class="eb-cta accent" href="https://szi-asesor.github.io/Prelim/HTML%20Activity/Davie's%20Burgers/" target="_blank" rel="noopener">View the page ↗</a>
+                    </div>
+                    <div class="eb-visual mono">Davie's Burgers — 03</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+      <!-- ================= END CINEMATIC ZONE ================= -->
+
+      <section class="plain shell" id="projects">
+        <div class="sec-head">
+          <span class="sec-index mono">04</span>
+          <h2 class="sec-title">Projects &amp; Skills</h2>
+          <div class="sec-note">Programming, video editing, and graphic design.</div>
+        </div>
+
+        <div class="subhead mono">Programming</div>
+        <div class="prog-list block-space">
+          <div class="prog-row">
+            <div>
+              <h3>Student Organization Management System</h3>
+              <p>Case study write-up in progress.</p>
+            </div>
+            <div class="badge">Placeholder</div>
+          </div>
+          <div class="prog-row">
+            <div>
+              <h3>Real Estate Management System</h3>
+              <p>Java console application — write-up in progress.</p>
+            </div>
+            <div class="badge">Placeholder</div>
+          </div>
+        </div>
+
+        <div class="subhead mono">Video Editing</div>
+      </section>
+
+      <!-- 3D WALL — VIDEO EDITING -->
+      <section class="wall-stage" id="wall-video" style="height:280vh;">
+        <div class="wall-sticky">
+          <div class="shell">
+            <div class="wall-viewport">
+              <div class="wall-track" id="trackVideo"></div>
+            </div>
+            <div class="wall-hint mono">Scroll to move through the wall →</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="plain shell" style="padding-top:0; border-top:none;">
+        <div class="subhead mono">Graphic Designing</div>
+      </section>
+
+      <!-- 3D WALL — GRAPHIC DESIGN -->
+      <section class="wall-stage" id="wall-design" style="height:340vh;">
+        <div class="wall-sticky">
+          <div class="shell">
+            <div class="wall-viewport">
+              <div class="wall-track" id="trackDesign"></div>
+            </div>
+            <div class="wall-hint mono">Scroll to move through the wall →</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="plain shell" id="toolkit">
+        <div class="sec-head">
+          <span class="sec-index mono">05</span>
+          <h2 class="sec-title">Toolkit</h2>
+          <div class="sec-note">What I'm reaching for, day to day.</div>
+        </div>
+        <div class="tool-grid">
+          <div class="tool"><div class="tool-mark">Fg</div><div class="tool-name">Figma</div></div>
+          <div class="tool"><div class="tool-mark">Pp</div><div class="tool-name">Photopea</div></div>
+          <div class="tool"><div class="tool-mark">Ps</div><div class="tool-name">Photoshop</div></div>
+          <div class="tool"><div class="tool-mark">Ca</div><div class="tool-name">Canva</div></div>
+          <div class="tool"><div class="tool-mark">Dr</div><div class="tool-name">DaVinci Resolve</div></div>
+          <div class="tool"><div class="tool-mark">Cc</div><div class="tool-name">CapCut</div></div>
+        </div>
+      </section>
+
+      <section class="plain shell" id="certs">
+        <div class="sec-head">
+          <span class="sec-index mono">06</span>
+          <h2 class="sec-title">Certificates</h2>
+          <div class="sec-note">Coursework I've completed and can vouch for.</div>
+        </div>
+        <div class="tile-grid">
+          <a class="tile" href="https://www.coursera.org/account/accomplishments/verify/8EN1PRPW1VWH" target="_blank" rel="noopener">
+            <div class="tile-idx">01</div>
+            <div class="tile-cat">Coursera</div>
+            <div class="tile-name">Introduction to Generative AI</div>
+            <div class="tile-go">↗</div>
+          </a>
+          <a class="tile" href="https://coursera.org/share/4ed7325cf662ac18bd33f424269bc6c7" target="_blank" rel="noopener">
+            <div class="tile-idx">02</div>
+            <div class="tile-cat">Coursera</div>
+            <div class="tile-name">Generative AI for Everyone</div>
+            <div class="tile-go">↗</div>
+          </a>
+          <a class="tile" href="https://www.credly.com/badges/bbf0d403-10f6-438e-8156-b830e0c73a32/linked_in_profile" target="_blank" rel="noopener">
+            <div class="tile-idx">03</div>
+            <div class="tile-cat">Credly</div>
+            <div class="tile-name">Artificial Intelligence Essentials V2</div>
+            <div class="tile-go">↗</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="plain shell" id="contact">
+        <div class="sec-head">
+          <span class="sec-index mono">07</span>
+          <h2 class="sec-title">Contact</h2>
+          <div class="sec-note">Student projects, competitions, or just a good idea.</div>
+        </div>
+        <div class="contact-grid">
+          <div>
+            <p class="foot-line">Have something in mind? <span class="accent">Let's talk.</span></p>
+            <form class="contact-form" id="contactForm">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <textarea name="message" rows="4" placeholder="What's the project?" required></textarea>
+              <button type="submit">Send message ↗</button>
+            </form>
+            <p class="contact-note">Opens your email app with this message pre-filled — nothing is sent from this page directly.</p>
+          </div>
+          <div>
+            <div class="subhead mono">Or reach me directly</div>
+            <div class="contact-socials">
+              <a href="https://github.com/szi-asesor" target="_blank" rel="noopener">GitHub <span>↗</span></a>
+              <a href="https://www.linkedin.com/in/szianzey-f-asesor-4172483a7/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+              <a href="https://www.facebook.com/szianzey.asesor" target="_blank" rel="noopener">Facebook <span>↗</span></a>
+              <a href="https://www.instagram.com/szianzey/" target="_blank" rel="noopener">Instagram <span>↗</span></a>
+              <a href="https://www.tiktok.com/@one_hee" target="_blank" rel="noopener">TikTok <span>↗</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="foot-bottom mono">
+          <span>© 2026 Szianzey Asesor</span>
+          <a href="#top" class="back-top">Back to top ↑</a>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="content-inverted" id="contentInverted" aria-hidden="true"></div>
   </div>
-</div>
 
-<!-- ============ TIMELINE NAV (signature element) ============ -->
-<header id="timeline-nav">
-  <div class="timeline-top">
-    <a href="#home" class="brand">SZIANZEY<span>.</span>ASESOR</a>
-    <div class="timeline-readout">
-      <span class="tc-label">TIMECODE</span>
-      <span class="tc-value" id="timecode">00:00:00:00</span>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <div class="timeline-track" role="navigation" aria-label="Section timeline">
-    <div class="timeline-ruler"></div>
-    <div class="timeline-progress" id="timeline-progress"></div>
-    <div class="playhead" id="playhead"></div>
-    <div class="timeline-markers">
-      <button class="marker active" data-section="home"><span class="marker-dot"></span><span class="marker-label">00 · INTRO</span></button>
-      <button class="marker" data-section="about"><span class="marker-dot"></span><span class="marker-label">01 · ABOUT</span></button>
-      <button class="marker" data-section="work"><span class="marker-dot"></span><span class="marker-label">02 · WORK</span></button>
-      <button class="marker" data-section="skills"><span class="marker-dot"></span><span class="marker-label">03 · SKILLS</span></button>
-      <button class="marker" data-section="contact"><span class="marker-dot"></span><span class="marker-label">04 · CONTACT</span></button>
-    </div>
-  </div>
-
-  <nav class="mobile-menu" id="mobile-menu">
-    <a href="#home" class="mobile-link" data-section="home">00 — Intro</a>
-    <a href="#about" class="mobile-link" data-section="about">01 — About</a>
-    <a href="#work" class="mobile-link" data-section="work">02 — Work</a>
-    <a href="#skills" class="mobile-link" data-section="skills">03 — Skills</a>
-    <a href="#contact" class="mobile-link" data-section="contact">04 — Contact</a>
-  </nav>
-</header>
-
-<main>
-
-  <!-- ============ HERO ============ -->
-  <section id="home" class="section hero">
-    <div class="hero-waveform" aria-hidden="true">
-      <div class="wave-bars" id="wave-bars"></div>
-    </div>
-    <div class="hero-content">
-      <p class="pre-title">// NOW PLAYING</p>
-      <h1 class="hero-title">SZIANZEY<br>ASESOR</h1>
-      <p class="hero-subtitle typewriter" id="typewriter"></p>
-      <div class="hero-tags">
-        <span class="tag tag-video">VIDEO EDITOR</span>
-        <span class="tag tag-design">GRAPHIC DESIGNER</span>
-        <span class="tag tag-code">CS STUDENT</span>
-      </div>
-      <div class="hero-buttons">
-        <a href="#work" class="btn btn-primary">Watch the Reel</a>
-        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <span>SCROLL</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section id="about" class="section">
-    <div class="section-header">
-      <span class="section-num">01</span>
-      <h2 class="section-title">About</h2>
-      <div class="section-line"></div>
-    </div>
-
-    <div class="about-grid">
-      <div class="about-image-wrap">
-        <div class="about-image">
-          <img src="https://via.placeholder.com/440x520/16161f/8d8ca0?text=YOUR+PHOTO" alt="Placeholder headshot of Szianzey Asesor" />
-          <div class="clip-frame">
-            <span class="clip-corner tl"></span>
-            <span class="clip-corner tr"></span>
-            <span class="clip-corner bl"></span>
-            <span class="clip-corner br"></span>
-          </div>
-          <div class="clip-tag">
-            <p>CLIP_00A.MOV</p>
-            <p>ROLE: <span class="ok">MULTI-DISCIPLINE CREATOR</span></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="about-text">
-        <p class="about-lead">
-          [Placeholder] I cut the story, design the look, and build the system it all runs on —
-          three disciplines, one point of view.
-        </p>
-        <p>
-          [Placeholder bio] Replace this with your real background: how you got into editing and
-          design, what kind of computer science student you are, and what ties the three together
-          for you. Mention the tools you reach for first and the kind of work you want more of.
-        </p>
-        <p>
-          [Placeholder] Add education, certifications, notable clients, awards, or milestones here.
-          Keep it specific — real numbers and real names beat generic claims.
-        </p>
-
-        <div class="stats-grid">
-          <div class="stat-box">
-            <h3 class="counter" data-target="40">0</h3>
-            <p>Videos Edited</p>
-          </div>
-          <div class="stat-box">
-            <h3 class="counter" data-target="25">0</h3>
-            <p>Designs Shipped</p>
-          </div>
-          <div class="stat-box">
-            <h3 class="counter" data-target="12">0</h3>
-            <p>Code Projects</p>
-          </div>
-          <div class="stat-box">
-            <h3 class="counter" data-target="3">0</h3>
-            <p>Years Creating</p>
-          </div>
-        </div>
-
-        <a href="#" class="btn btn-primary" download>Download Résumé (PDF)</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WORK (unified timeline of tracks) ============ -->
-  <section id="work" class="section">
-    <div class="section-header">
-      <span class="section-num">02</span>
-      <h2 class="section-title">Work</h2>
-      <div class="section-line"></div>
-    </div>
-
-    <p class="section-intro">Every project lives on one of three tracks — solo a track to see just that kind of work, the way you'd isolate a track in an editing timeline.</p>
-
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">ALL TRACKS</button>
-      <button class="filter-btn track-video" data-filter="video">VIDEO</button>
-      <button class="filter-btn track-design" data-filter="design">DESIGN</button>
-      <button class="filter-btn track-code" data-filter="code">CODE</button>
-    </div>
-
-    <div class="projects-grid">
-
-      <div class="project-card" data-category="video">
-        <span class="track-flag track-video"></span>
-        <div class="project-image">
-          <img src="https://via.placeholder.com/500x300/16161f/ff5470?text=REEL+CLIP+01" alt="Placeholder thumbnail for a video edit" />
-          <span class="play-badge">▶</span>
-          <span class="duration-badge">02:14</span>
-        </div>
-        <div class="project-body">
-          <span class="project-id">VIDEO · SHORT-FORM</span>
-          <h3>Project Title One</h3>
-          <p>[Placeholder] Describe the brief, your edit style (pacing, color, sound design), and the result — views, client reaction, etc.</p>
-          <div class="project-tags"><span>Premiere Pro</span><span>DaVinci Resolve</span><span>Color Grade</span></div>
-          <div class="project-links">
-            <a href="#" class="link-btn">WATCH ↗</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="video">
-        <span class="track-flag track-video"></span>
-        <div class="project-image">
-          <img src="https://via.placeholder.com/500x300/16161f/ff5470?text=REEL+CLIP+02" alt="Placeholder thumbnail for a video edit" />
-          <span class="play-badge">▶</span>
-          <span class="duration-badge">08:41</span>
-        </div>
-        <div class="project-body">
-          <span class="project-id">VIDEO · LONG-FORM</span>
-          <h3>Project Title Two</h3>
-          <p>[Placeholder] Documentary or long-form YouTube-style edit. Talk about narrative structure and motion graphics used.</p>
-          <div class="project-tags"><span>After Effects</span><span>Motion Graphics</span></div>
-          <div class="project-links">
-            <a href="#" class="link-btn">WATCH ↗</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="design">
-        <span class="track-flag track-design"></span>
-        <div class="project-image">
-          <img src="https://via.placeholder.com/500x300/16161f/7c5cff?text=DESIGN+CASE+01" alt="Placeholder thumbnail for a design project" />
-        </div>
-        <div class="project-body">
-          <span class="project-id">DESIGN · BRANDING</span>
-          <h3>Project Title Three</h3>
-          <p>[Placeholder] Problem → process → outcome. Show the identity system: logo, type, color, and where it lives.</p>
-          <div class="project-tags"><span>Illustrator</span><span>Figma</span><span>Brand Identity</span></div>
-          <div class="project-links">
-            <a href="#" class="link-btn">VIEW CASE STUDY ↗</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="design">
-        <span class="track-flag track-design"></span>
-        <div class="project-image">
-          <img src="https://via.placeholder.com/500x300/16161f/7c5cff?text=DESIGN+CASE+02" alt="Placeholder thumbnail for a design project" />
-        </div>
-        <div class="project-body">
-          <span class="project-id">DESIGN · UI/UX</span>
-          <h3>Project Title Four</h3>
-          <p>[Placeholder] App or website UI. Mention research, wireframes, and the final polished screens.</p>
-          <div class="project-tags"><span>Figma</span><span>Prototyping</span><span>UI Design</span></div>
-          <div class="project-links">
-            <a href="#" class="link-btn">VIEW CASE STUDY ↗</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="code">
-        <span class="track-flag track-code"></span>
-        <div class="project-image">
-          <img src="https://via.placeholder.com/500x300/16161f/29d3c6?text=CODE+PROJECT+01" alt="Placeholder thumbnail for a code project" />
-        </div>
-        <div class="project-body">
-          <span class="project-id">CODE · WEB APP</span>
-          <h3>Project Title Five</h3>
-          <p>[Placeholder] What problem it solves, your role, and the stack. Bonus points if it blends editing/design skills with code.</p>
-          <div class="project-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
-          <div class="project-links">
-            <a href="#" class="link-btn">SOURCE ↗</a>
-            <a href="#" class="link-btn">LIVE DEMO ↗</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="code">
-        <span class="track-flag track-code"></span>
-        <div class="project-image">
-          <img src="https://via.placeholder.com/500x300/16161f/29d3c6?text=CODE+PROJECT+02" alt="Placeholder thumbnail for a code project" />
-        </div>
-        <div class="project-body">
-          <span class="project-id">CODE · SCHOOL PROJECT</span>
-          <h3>Project Title Six</h3>
-          <p>[Placeholder] Coursework, hackathon build, or personal tool. Note the concepts you applied (data structures, algorithms, etc).</p>
-          <div class="project-tags"><span>Python</span><span>Data Structures</span></div>
-          <div class="project-links">
-            <a href="#" class="link-btn">SOURCE ↗</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============ SKILLS ============ -->
-  <section id="skills" class="section">
-    <div class="section-header">
-      <span class="section-num">03</span>
-      <h2 class="section-title">Skills</h2>
-      <div class="section-line"></div>
-    </div>
-
-    <div class="skills-grid">
-      <div class="skill-category">
-        <h3 class="track-video">// VIDEO TRACK</h3>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Premiere Pro</span><span>90%</span></div>
-          <div class="skill-bar"><div class="skill-fill fill-video" data-width="90"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>DaVinci Resolve</span><span>80%</span></div>
-          <div class="skill-bar"><div class="skill-fill fill-video" data-width="80"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>After Effects</span><span>75%</span></div>
-          <div class="skill-bar"><div class="skill-fill fill-video" data-width="75"></div></div>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3 class="track-design">// DESIGN TRACK</h3>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Figma</span><span>88%</span></div>
-          <div class="skill-bar"><div class="skill-fill fill-design" data-width="88"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Illustrator</span><span>82%</span></div>
-          <div class="skill-bar"><div class="skill-fill fill-design" data-width="82"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Photoshop</span><span>85%</span></div>
-          <div class="skill-bar"><div class="skill-fill fill-design" data-width="85"></div></div>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3 class="track-code">// CODE TRACK</h3>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>JavaScript</span><span>80%</span></div>
-          <div class="skill-bar"><div class="skill-fill fill-code" data-width="80"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Python</span><span>78%</span></div>
-          <div class="skill-bar"><div class="skill-fill fill-code" data-width="78"></div></div>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>React</span><span>70%</span></div>
-          <div class="skill-bar"><div class="skill-fill fill-code" data-width="70"></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee-wrap" aria-hidden="true">
-      <div class="marquee-track">
-        <span>PREMIERE PRO</span><span>·</span><span>DAVINCI RESOLVE</span><span>·</span><span>AFTER EFFECTS</span><span>·</span>
-        <span>FIGMA</span><span>·</span><span>ILLUSTRATOR</span><span>·</span><span>PHOTOSHOP</span><span>·</span>
-        <span>JAVASCRIPT</span><span>·</span><span>PYTHON</span><span>·</span><span>REACT</span><span>·</span><span>GIT</span><span>·</span>
-        <span>PREMIERE PRO</span><span>·</span><span>DAVINCI RESOLVE</span><span>·</span><span>AFTER EFFECTS</span><span>·</span>
-        <span>FIGMA</span><span>·</span><span>ILLUSTRATOR</span><span>·</span><span>PHOTOSHOP</span><span>·</span>
-        <span>JAVASCRIPT</span><span>·</span><span>PYTHON</span><span>·</span><span>REACT</span><span>·</span><span>GIT</span><span>·</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section id="contact" class="section">
-    <div class="section-header">
-      <span class="section-num">04</span>
-      <h2 class="section-title">Contact</h2>
-      <div class="section-line"></div>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-info">
-        <p class="about-lead">Have a project in mind? Let's cut something together.</p>
-
-        <div class="contact-item">
-          <span class="contact-label">EMAIL</span>
-          <a href="mailto:placeholder@email.com">placeholder@email.com</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">LOCATION</span>
-          <p>Placeholder City, Placeholder Country</p>
-        </div>
-        <div class="contact-item">
-          <span class="contact-label">STATUS</span>
-          <p><span class="pulse-dot"></span> Open for freelance & collab work</p>
-        </div>
-
-        <div class="social-links">
-          <a href="#" class="social-btn">GITHUB</a>
-          <a href="#" class="social-btn">BEHANCE</a>
-          <a href="#" class="social-btn">YOUTUBE</a>
-          <a href="#" class="social-btn">LINKEDIN</a>
-        </div>
-      </div>
-
-      <form class="contact-form" id="contact-form">
-        <div class="form-group">
-          <label>NAME</label>
-          <input type="text" name="name" required placeholder="Your name" />
-        </div>
-        <div class="form-group">
-          <label>EMAIL</label>
-          <input type="email" name="email" required placeholder="you@email.com" />
-        </div>
-        <div class="form-group">
-          <label>MESSAGE</label>
-          <textarea name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary full-width">Send Message</button>
-        <p class="form-status" id="form-status"></p>
-      </form>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <p>© 2026 Szianzey Asesor — Video Editor · Graphic Designer · CS Student</p>
-  <p class="footer-sub">Built frame by frame.</p>
-</footer>
-
-<button id="back-to-top" aria-label="Back to top">▲</button>
-
-<script src="script.js"></script>
+<script src="https://szi-asesor.github.io/PORTFOLIO/script.js"></script>
 </body>
 </html>

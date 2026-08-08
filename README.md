@@ -1,1 +1,1 @@
-# szi-asesor.github.io
+The context of the whole repository and how to access and set up the portfolio. more on document.
