@@ -24,26 +24,26 @@
   var videos = [
     {
       url: "https://www.tiktok.com/@one_hee/video/7663869968500395272",
-      ratio: "18 / 11",
+      ratio: "9 / 16",
     },
     {
       url: "https://www.tiktok.com/@one_hee/video/7659033656966663442",
-      ratio: "18 / 11",
+      ratio: "9 / 16",
     },
     {
       url: "https://www.tiktok.com/@one_hee/video/7658178130552835336",
-      ratio: "18 / 11",
+      ratio: "9 / 16",
     },
     {
       url: "https://www.tiktok.com/@one_hee/video/7652736403293441300",
-      ratio: "18 / 11",
+      ratio: "9 / 16",
     },
     {
       url: "https://www.tiktok.com/@one_hee/video/7629185484635491605",
-      ratio: "18 / 11",
+      ratio: "9 / 16",
     },
-    { url: "https://www.instagram.com/reel/DXBZVwwiZR5/", ratio: "18 / 11" },
-    { url: "https://www.instagram.com/reel/DTIns0NCUm5/", ratio: "18 / 11" },
+    { url: "https://www.instagram.com/reel/DXBZVwwiZR5/", ratio: "9 / 16" },
+    { url: "https://www.instagram.com/reel/DTIns0NCUm5/", ratio: "9 / 16" },
   ];
   var designs = [
     {
