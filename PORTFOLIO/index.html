@@ -1,291 +1,650 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Szianzey Asesor — Portfolio</title>
-<meta name="description" content="Portfolio of Szianzey Asesor — developer, designer, editor.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://szi-asesor.github.io/PORTFOLIO/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Szianzey Asesor — Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Szianzey Asesor — developer, designer, editor."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="anchor" aria-hidden="true">
+      <div class="anchor-marker" id="anchorMarker"></div>
+    </div>
+    <div class="cursor-bar" id="cursorBar" aria-hidden="true"></div>
 
-  <div class="anchor" aria-hidden="true"><div class="anchor-marker" id="anchorMarker"></div></div>
-  <div class="cursor-bar" id="cursorBar" aria-hidden="true"></div>
+    <div class="ink-wrap">
+      <div id="content">
+        <header class="top shell">
+          <div class="wordmark">SZIANZEY<span class="accent">.</span></div>
+          <button class="menu-btn mono" id="menuToggle" aria-label="Open Menu">
+            <span>Menu</span>
+            <span class="menu-grid-icon"><i></i><i></i><i></i><i></i></span>
+          </button>
+        </header>
 
-  <div class="ink-wrap">
-    <div id="content">
-
-      <header class="top shell">
-        <div class="wordmark">SZIANZEY<span class="accent">.</span></div>
-        <nav class="top-nav mono">
-          <a href="#cinematic">About</a>
-          <a href="#projects">Work</a>
-          <a href="#toolkit">Toolkit</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
-
-      <section class="hero shell" id="top">
-        <div class="eyebrow mono">Portfolio — 2026</div>
-        <h1 class="hero-name">Szianzey<br><span class="accent">Asesor</span>.</h1>
-        <p class="hero-sub">Aspiring developer with a habit of finishing what he starts — an honor roll built on late nights, a national research title, and a table tennis paddle for when the debugging gets tense. This is where the code, the edits, and the designs live.</p>
-        <div class="hero-meta mono">
-          <span><span class="dot"></span>Open to student projects</span>
-          <span><span class="dot"></span>Based in the Philippines</span>
-          <span><span class="dot"></span>Scroll to begin ↓</span>
+        <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+          <div class="menu-overlay-header mono">
+            <span>■ MENU / 01-04</span>
+            <button class="menu-close-btn" id="menuClose">Close ✕</button>
+          </div>
+          <nav class="menu-overlay-nav">
+            <a href="#cinematic" class="menu-link"
+              ><span class="num mono">01</span> About
+              <span class="menu-subtext mono">[PROFILE]</span></a
+            >
+            <a href="#projects" class="menu-link"
+              ><span class="num mono">02</span> Work
+              <span class="menu-subtext mono">[PROJECTS]</span></a
+            >
+            <a href="#toolkit" class="menu-link"
+              ><span class="num mono">03</span> Toolkit
+              <span class="menu-subtext mono">[STACK]</span></a
+            >
+            <a href="#contact" class="menu-link"
+              ><span class="num mono">04</span> Contact
+              <span class="menu-subtext mono">[GET IN TOUCH]</span></a
+            >
+          </nav>
         </div>
-      </section>
 
-      <!-- ================= CINEMATIC / SCROLLJACKED ZONE ================= -->
-      <div id="cinematic">
+        <section class="hero shell" id="top">
+          <div class="eyebrow mono">Portfolio — 2026</div>
+          <h1 class="hero-name">
+            Szianzey<br /><span class="accent">Asesor</span>.
+          </h1>
+          <p class="hero-sub">
+            Aspiring developer with a habit of finishing what he starts — an
+            honor roll built on late nights, a national research title, and a
+            table tennis paddle for when the debugging gets tense. This is where
+            the code, the edits, and the designs live.
+          </p>
+          <div class="hero-status mono">
+            <span class="status-left"
+              ><span class="dot"></span>Based in Davao, PH
+              <span id="heroClock">—</span></span
+            >
+            <a href="#contact" class="bracket-link">[ Let's talk ]</a>
+          </div>
+        </section>
 
-        <!-- STAGE 01 — ABOUT -->
-        <section class="stage" id="stage-about" style="height:250vh;">
-          <div class="stage-sticky">
-            <div class="shell">
-              <div class="stage-rail" id="rail-about"><i><b></b></i><i><b></b></i></div>
-              <div class="slide-stack">
-                <div class="slide" data-slide="0">
-                  <div class="slide-eyebrow mono">01 — About</div>
-                  <h3 class="slide-title">I'm Szianzey, a Computer Science student focused on <span class="accent">web development</span>.</h3>
-                  <p class="slide-copy">I like building clear, modern interfaces that balance design and function — and I bring the same discipline from the honor roll into every codebase: show up, log the reps, don't cut corners.</p>
+        <!-- ================= CINEMATIC / SCROLLJACKED ZONE ================= -->
+        <div id="cinematic">
+          <!-- STAGE 01 — ABOUT -->
+          <section class="stage" id="stage-about" style="height: 230vh">
+            <div class="stage-sticky">
+              <div class="shell">
+                <div class="list-head">
+                  <div class="list-eyebrow mono">
+                    <span>01 / About</span>
+                    <span class="list-active"
+                      >ACTIVE <b id="cnt-about">01</b>/05</span
+                    >
+                  </div>
+                  <h2 class="list-title">
+                    I'm Szianzey — a Computer Science student who builds
+                    <span class="accent">clear, modern interfaces.</span>
+                  </h2>
+                  <p class="list-sub">
+                    I bring the same discipline from the honor roll into every
+                    codebase: show up, log the reps, don't cut corners. Here's
+                    where to find the rest of it.
+                  </p>
                 </div>
-                <div class="slide" data-slide="1">
-                  <div class="slide-eyebrow mono">01 — Find me</div>
-                  <h3 class="slide-title">Everywhere else I show up.</h3>
-                  <div class="about-socials">
-                    <a href="https://github.com/szi-asesor" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a>
-                    <a href="https://www.linkedin.com/in/szianzey-f-asesor-4172483a7/" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
-                    <a href="https://www.facebook.com/szianzey.asesor" target="_blank" rel="noopener">Facebook <span class="arrow">↗</span></a>
-                    <a href="https://www.instagram.com/szianzey/" target="_blank" rel="noopener">Instagram <span class="arrow">↗</span></a>
-                    <a href="https://www.tiktok.com/@one_hee" target="_blank" rel="noopener">TikTok <span class="arrow">↗</span></a>
+                <div class="list-wrap">
+                  <a
+                    class="list-row is-link"
+                    data-row="0"
+                    href="https://github.com/szi-asesor"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <div class="row-tag mono">[ OPEN PROFILE ]</div>
+                    <div class="row-name">GitHub</div>
+                    <div class="row-num mono">01</div>
+                    <div class="row-meta">
+                      <div class="row-cat mono">Code</div>
+                      <div class="row-desc">
+                        Repos, experiments, and the stuff still mid-build.
+                      </div>
+                    </div>
+                    <div class="row-arrow mono">↗</div>
+                  </a>
+                  <a
+                    class="list-row is-link"
+                    data-row="1"
+                    href="https://www.linkedin.com/in/szianzey-f-asesor-4172483a7/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <div class="row-tag mono">[ OPEN PROFILE ]</div>
+                    <div class="row-name">LinkedIn</div>
+                    <div class="row-num mono">02</div>
+                    <div class="row-meta">
+                      <div class="row-cat mono">Career</div>
+                      <div class="row-desc">
+                        Education, achievements, and how to reach me.
+                      </div>
+                    </div>
+                    <div class="row-arrow mono">↗</div>
+                  </a>
+                  <a
+                    class="list-row is-link"
+                    data-row="2"
+                    href="https://www.facebook.com/szianzey.asesor"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <div class="row-tag mono">[ OPEN PROFILE ]</div>
+                    <div class="row-name">Facebook</div>
+                    <div class="row-num mono">03</div>
+                    <div class="row-meta">
+                      <div class="row-cat mono">Social Media</div>
+                      <div class="row-desc">
+                        Where most of the graphic design work gets posted first.
+                      </div>
+                    </div>
+                    <div class="row-arrow mono">↗</div>
+                  </a>
+                  <a
+                    class="list-row is-link"
+                    data-row="3"
+                    href="https://www.instagram.com/szianzey/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <div class="row-tag mono">[ OPEN PROFILE ]</div>
+                    <div class="row-name">Instagram</div>
+                    <div class="row-num mono">04</div>
+                    <div class="row-meta">
+                      <div class="row-cat mono">Social Media</div>
+                      <div class="row-desc">
+                        Reels, edits, and the occasional behind-the-scenes.
+                      </div>
+                    </div>
+                    <div class="row-arrow mono">↗</div>
+                  </a>
+                  <a
+                    class="list-row is-link"
+                    data-row="4"
+                    href="https://www.tiktok.com/@one_hee"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <div class="row-tag mono">[ OPEN PROFILE ]</div>
+                    <div class="row-name">TikTok</div>
+                    <div class="row-num mono">05</div>
+                    <div class="row-meta">
+                      <div class="row-cat mono">Social Media</div>
+                      <div class="row-desc">
+                        Short-form video editing, mostly for fun.
+                      </div>
+                    </div>
+                    <div class="row-arrow mono">↗</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- STAGE 02 — ACHIEVEMENTS -->
+          <section class="stage" id="stage-ach" style="height: 340vh">
+            <div class="stage-sticky">
+              <div class="shell">
+                <div class="list-head">
+                  <div class="list-eyebrow mono">
+                    <span>02 / Achievements</span>
+                    <span class="list-active"
+                      >ACTIVE <b id="cnt-ach">01</b>/04</span
+                    >
+                  </div>
+                  <h2 class="list-title">
+                    Wins that say more about
+                    <span class="accent">how I work</span> than what I won.
+                  </h2>
+                  <p class="list-sub">
+                    Academics, research, language, and sport — different arenas,
+                    same habits.
+                  </p>
+                </div>
+                <div class="list-wrap">
+                  <div class="list-row" data-row="0">
+                    <div class="row-tag mono">[ ACADEMICS · NO FAIL ]</div>
+                    <div class="row-name">Honor Student</div>
+                    <div class="row-num mono">01</div>
+                    <div class="row-meta">
+                      <div class="row-cat mono">Academics</div>
+                      <div class="row-desc">
+                        Programming means managing massive codebases without
+                        cutting corners — this record proves the study habits
+                        and stamina to keep learning dense concepts without
+                        giving up.
+                      </div>
+                    </div>
+                    <div class="row-arrow mono"></div>
+                  </div>
+                  <div class="list-row" data-row="1">
+                    <div class="row-tag mono">[ 2025 · CHAMPION ]</div>
+                    <div class="row-name">JMCFI Research Congress</div>
+                    <div class="row-num mono">02</div>
+                    <div class="row-meta">
+                      <div class="row-cat mono">Research</div>
+                      <div class="row-desc">
+                        First place in a research congress that rewarded
+                        structured thinking and clear communication under a
+                        deadline.
+                      </div>
+                    </div>
+                    <div class="row-arrow mono"></div>
+                  </div>
+                  <div class="list-row" data-row="2">
+                    <div class="row-tag mono">[ LANGUAGE AWARD ]</div>
+                    <div class="row-name">Best in Nihongo</div>
+                    <div class="row-num mono">03</div>
+                    <div class="row-meta">
+                      <div class="row-cat mono">Language</div>
+                      <div class="row-desc">
+                        A door into Japan's tech industry — research access,
+                        threat intelligence, and hardware/software ecosystems
+                        from Sony and Nintendo.
+                      </div>
+                    </div>
+                    <div class="row-arrow mono"></div>
+                  </div>
+                  <div class="list-row" data-row="3">
+                    <div class="row-tag mono">[ DAPRISA 2024 ]</div>
+                    <div class="row-name">3rd Placer, Table Tennis</div>
+                    <div class="row-num mono">04</div>
+                    <div class="row-meta">
+                      <div class="row-cat mono">Sport</div>
+                      <div class="row-desc">
+                        Reading an opponent and adapting mid-rally translates
+                        directly into high-pressure debugging and staying calm
+                        when code breaks.
+                      </div>
+                    </div>
+                    <div class="row-arrow mono"></div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- STAGE 03 — EARLY BUILDS -->
+          <section class="stage" id="stage-eb" style="height: 280vh">
+            <div class="stage-sticky">
+              <div class="shell">
+                <div class="list-head">
+                  <div class="list-eyebrow mono">
+                    <span>03 / Early Builds</span>
+                    <span class="list-active"
+                      >ACTIVE <b id="cnt-eb">01</b>/03</span
+                    >
+                  </div>
+                  <h2 class="list-title">
+                    The first pages I ever <span class="accent">shipped.</span>
+                  </h2>
+                  <p class="list-sub">
+                    HTML/CSS activities — before frameworks, before the toolkit.
+                  </p>
+                </div>
+                <div class="list-wrap">
+                  <a
+                    class="list-row is-link"
+                    data-row="0"
+                    href="https://szi-asesor.github.io/Prelim/HTML%20Activity/Fashion/index.html"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <div class="row-tag mono">[ HTML / CSS ]</div>
+                    <div class="row-name">Fashion Blog</div>
+                    <div class="row-num mono">01</div>
+                    <div class="row-meta">
+                      <div class="row-cat mono">Activity</div>
+                      <div class="row-desc">
+                        A layout activity — styled type, a magazine-style grid.
+                      </div>
+                    </div>
+                    <div class="row-arrow mono">↗</div>
+                  </a>
+                  <a
+                    class="list-row is-link"
+                    data-row="1"
+                    href="https://szi-asesor.github.io/Prelim/HTML%20Activity/Wine%20Festival%20Schedule/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <div class="row-tag mono">[ HTML / CSS ]</div>
+                    <div class="row-name">Wine Festival Schedule</div>
+                    <div class="row-num mono">02</div>
+                    <div class="row-meta">
+                      <div class="row-cat mono">Activity</div>
+                      <div class="row-desc">
+                        Structured tables, clean hierarchy, built from scratch.
+                      </div>
+                    </div>
+                    <div class="row-arrow mono">↗</div>
+                  </a>
+                  <a
+                    class="list-row is-link"
+                    data-row="2"
+                    href="https://szi-asesor.github.io/Prelim/HTML%20Activity/Davie's%20Burgers/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <div class="row-tag mono">[ HTML / CSS ]</div>
+                    <div class="row-name">Davie's Burgers</div>
+                    <div class="row-num mono">03</div>
+                    <div class="row-meta">
+                      <div class="row-cat mono">Activity</div>
+                      <div class="row-desc">
+                        A restaurant landing page — the first time it felt like
+                        a real product.
+                      </div>
+                    </div>
+                    <div class="row-arrow mono">↗</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- ================= END CINEMATIC ZONE ================= -->
+
+        <section class="plain shell" id="projects">
+          <div class="sec-head">
+            <span class="sec-index mono">04</span>
+            <h2 class="sec-title">Projects &amp; Skills</h2>
+            <div class="sec-note">
+              Programming, video editing, and graphic design.
+            </div>
+          </div>
+
+          <div class="subhead mono">Programming</div>
+          <div class="prog-list block-space">
+            <div class="prog-row">
+              <div>
+                <h3>Student Organization Management System</h3>
+                <p>Case study write-up in progress.</p>
+              </div>
+              <div class="badge">Java</div>
+            </div>
+            <div class="prog-row">
+              <div>
+                <h3>
+                  <a
+                    class="project-link"
+                    href="https://github.com/szi-asesor/Real-Estate-Management-System-in-Java.git"
+                    target="_blank"
+                    rel="noopener"
+                    >Real Estate Management System ↗</a
+                  >
+                </h3>
+                <p>Java console application — write-up in progress.</p>
+              </div>
+              <div class="badge">GitHub</div>
+            </div>
+            <div class="prog-row">
+              <div>
+                <h3>Guilds — Quality Assurance</h3>
+                <p>
+                  <strong>Guilds</strong> centralizes how students discover
+                  clubs, how officers manage members, and how OSAD reviews
+                  submissions — across every college at the
+                  <strong
+                    >University of the Immaculate Conception, Davao City</strong
+                  >.
+                </p>
+              </div>
+              <div class="badge">In progress</div>
+            </div>
+          </div>
+
+          <div class="subhead mono">Video Editing</div>
+        </section>
+
+        <!-- 3D WALL — VIDEO EDITING -->
+        <section class="wall-stage" id="wall-video" style="height: 280vh">
+          <div class="wall-sticky">
+            <div class="shell">
+              <div class="wall-viewport">
+                <div class="wall-track" id="trackVideo"></div>
+              </div>
+              <div class="wall-hint mono">
+                Scroll to move through the wall →
               </div>
             </div>
           </div>
         </section>
 
-        <!-- STAGE 02 — ACHIEVEMENTS -->
-        <section class="stage" id="stage-ach" style="height:400vh;">
-          <div class="stage-sticky">
+        <section class="plain shell" style="padding-top: 0; border-top: none">
+          <div class="subhead mono">Graphic Designing</div>
+        </section>
+
+        <!-- 3D WALL — GRAPHIC DESIGN -->
+        <section class="wall-stage" id="wall-design" style="height: 340vh">
+          <div class="wall-sticky">
             <div class="shell">
-              <div class="stage-rail" id="rail-ach"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
-              <div class="slide-stack">
-                <div class="slide" data-slide="0">
-                  <div class="ach-slide-num mono">Academics</div>
-                  <h3 class="slide-title">Honor Student — <span class="accent">No Fail</span>.</h3>
-                  <p class="slide-copy">Programming means managing massive codebases and complex logic without cutting corners. This record proves I have the study habits, time management, and stamina to learn dense technical concepts without giving up.</p>
-                </div>
-                <div class="slide" data-slide="1">
-                  <div class="ach-slide-num mono">Research</div>
-                  <h3 class="slide-title">JMCFI Research Congress 2025 — <span class="accent">Champion</span>.</h3>
-                  <p class="slide-copy">First place in a research congress that rewarded structured thinking and clear communication under a deadline — the same skills that carry over into shipping real projects.</p>
-                </div>
-                <div class="slide" data-slide="2">
-                  <div class="ach-slide-num mono">Language</div>
-                  <h3 class="slide-title">Best in <span class="accent">Nihongo</span>.</h3>
-                  <p class="slide-copy">A door into Japan's tech industry — access to exclusive research, local cybersecurity threat intelligence, and hardware/software ecosystems from companies like Sony and Nintendo.</p>
-                </div>
-                <div class="slide" data-slide="3">
-                  <div class="ach-slide-num mono">Sport</div>
-                  <h3 class="slide-title">3rd Placer, Table Tennis — <span class="accent">DAPRISA 2024</span>.</h3>
-                  <p class="slide-copy">Competitive sport builds sharp focus and resilience under pressure. Reading an opponent and adapting mid-rally translates directly to high-pressure debugging and staying calm when code breaks.</p>
-                </div>
+              <div class="wall-viewport">
+                <div class="wall-track" id="trackDesign"></div>
+              </div>
+              <div class="wall-hint mono">
+                Scroll to move through the wall →
               </div>
             </div>
           </div>
         </section>
 
-        <!-- STAGE 03 — EARLY BUILDS -->
-        <section class="stage" id="stage-eb" style="height:350vh;">
-          <div class="stage-sticky">
-            <div class="shell">
-              <div class="stage-rail" id="rail-eb"><i><b></b></i><i><b></b></i><i><b></b></i></div>
-              <div class="slide-stack">
-                <div class="slide" data-slide="0">
-                  <div class="eb-slide">
-                    <div>
-                      <div class="slide-eyebrow mono">03 — Early Builds</div>
-                      <h3 class="slide-title">Fashion Blog</h3>
-                      <p class="slide-copy">An HTML/CSS layout activity — styled type, a magazine-style grid.</p>
-                      <a class="eb-cta accent" href="https://szi-asesor.github.io/Prelim/HTML%20Activity/Fashion/index.html" target="_blank" rel="noopener">View the page ↗</a>
-                    </div>
-                    <div class="eb-visual mono">Fashion Blog — 01</div>
-                  </div>
-                </div>
-                <div class="slide" data-slide="1">
-                  <div class="eb-slide">
-                    <div>
-                      <div class="slide-eyebrow mono">03 — Early Builds</div>
-                      <h3 class="slide-title">Wine Festival Schedule</h3>
-                      <p class="slide-copy">A schedule page built with pure HTML/CSS — structured tables, clean hierarchy.</p>
-                      <a class="eb-cta accent" href="https://szi-asesor.github.io/Prelim/HTML%20Activity/Wine%20Festival%20Schedule/" target="_blank" rel="noopener">View the page ↗</a>
-                    </div>
-                    <div class="eb-visual mono">Wine Festival — 02</div>
-                  </div>
-                </div>
-                <div class="slide" data-slide="2">
-                  <div class="eb-slide">
-                    <div>
-                      <div class="slide-eyebrow mono">03 — Early Builds</div>
-                      <h3 class="slide-title">Davie's Burgers</h3>
-                      <p class="slide-copy">A restaurant landing page — the first time I built something that felt like a real product.</p>
-                      <a class="eb-cta accent" href="https://szi-asesor.github.io/Prelim/HTML%20Activity/Davie's%20Burgers/" target="_blank" rel="noopener">View the page ↗</a>
-                    </div>
-                    <div class="eb-visual mono">Davie's Burgers — 03</div>
-                  </div>
-                </div>
+        <section class="plain shell" id="toolkit">
+          <div class="sec-head">
+            <span class="sec-index mono">05</span>
+            <h2 class="sec-title">Toolkit</h2>
+            <div class="sec-note">What I'm reaching for, day to day.</div>
+          </div>
+          <div class="tool-grid">
+            <div class="tool">
+              <div class="tool-mark">
+                <img src="images/figma.png" alt="Figma" />
               </div>
+              <div class="tool-name">Figma</div>
+            </div>
+            <div class="tool">
+              <div class="tool-mark">
+                <img src="images/photopea.png" alt="Photopea" />
+              </div>
+              <div class="tool-name">Photopea</div>
+            </div>
+            <div class="tool">
+              <div class="tool-mark">
+                <img src="images/photoshop.png" alt="Photoshop" />
+              </div>
+              <div class="tool-name">Photoshop</div>
+            </div>
+            <div class="tool">
+              <div class="tool-mark">
+                <img src="images/canva.png" alt="Canva" />
+              </div>
+              <div class="tool-name">Canva</div>
+            </div>
+            <div class="tool">
+              <div class="tool-mark">
+                <img src="images/davinci.png" alt="DaVinci Resolve" />
+              </div>
+              <div class="tool-name">DaVinci Resolve</div>
+            </div>
+            <div class="tool">
+              <div class="tool-mark">
+                <img src="images/capcut.png" alt="CapCut" />
+              </div>
+              <div class="tool-name">CapCut</div>
+            </div>
+            <div class="tool">
+              <div class="tool-mark">
+                <img src="images/filmora.png" alt="Filmora" />
+              </div>
+              <div class="tool-name">Filmora</div>
+            </div>
+            <div class="tool">
+              <div class="tool-mark">
+                <img src="images/ae.png" alt="After Effects" />
+              </div>
+              <div class="tool-name">After Effects</div>
             </div>
           </div>
         </section>
 
+        <section class="plain shell" id="certs">
+          <div class="sec-head">
+            <span class="sec-index mono">06</span>
+            <h2 class="sec-title">Certificates</h2>
+            <div class="sec-note">
+              Coursework I've completed and can vouch for.
+            </div>
+          </div>
+          <div class="tile-grid">
+            <a
+              class="tile"
+              href="https://www.coursera.org/account/accomplishments/verify/8EN1PRPW1VWH"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="tile-idx">01</div>
+              <div class="tile-cat">Coursera</div>
+              <div class="tile-name">Introduction to Generative AI</div>
+              <div class="tile-go">↗</div>
+            </a>
+            <a
+              class="tile"
+              href="https://coursera.org/share/4ed7325cf662ac18bd33f424269bc6c7"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="tile-idx">02</div>
+              <div class="tile-cat">Coursera</div>
+              <div class="tile-name">Generative AI for Everyone</div>
+              <div class="tile-go">↗</div>
+            </a>
+            <a
+              class="tile"
+              href="https://www.credly.com/badges/bbf0d403-10f6-438e-8156-b830e0c73a32/linked_in_profile"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="tile-idx">03</div>
+              <div class="tile-cat">Credly</div>
+              <div class="tile-name">Artificial Intelligence Essentials V2</div>
+              <div class="tile-go">↗</div>
+            </a>
+          </div>
+        </section>
+
+        <section class="plain shell" id="contact">
+          <div class="sec-head">
+            <span class="sec-index mono">07</span>
+            <h2 class="sec-title">Contact</h2>
+            <div class="sec-note">
+              Student projects, competitions, or just a good idea.
+            </div>
+          </div>
+          <div class="contact-grid">
+            <div>
+              <p class="foot-line">
+                Have something in mind? <span class="accent">Let's talk.</span>
+              </p>
+              <form class="contact-form" id="contactForm">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your email"
+                  required
+                />
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="What's the project?"
+                  required
+                ></textarea>
+                <button type="submit">Send message ↗</button>
+              </form>
+              <p class="contact-note">
+                This opens your email app with this message pre-filled — nothing
+                is sent from this page directly.
+              </p>
+            </div>
+            <div class="contact-links">
+              <div class="subhead mono">Or reach me directly</div>
+              <div class="contact-socials">
+                <a
+                  href="https://github.com/szi-asesor"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub <span>↗</span></a
+                >
+                <a
+                  href="https://www.linkedin.com/in/szianzey-f-asesor-4172483a7/"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn <span>↗</span></a
+                >
+                <a
+                  href="https://www.facebook.com/szianzey.asesor"
+                  target="_blank"
+                  rel="noopener"
+                  >Facebook <span>↗</span></a
+                >
+                <a
+                  href="https://www.instagram.com/szianzey/"
+                  target="_blank"
+                  rel="noopener"
+                  >Instagram <span>↗</span></a
+                >
+                <a
+                  href="https://www.tiktok.com/@one_hee"
+                  target="_blank"
+                  rel="noopener"
+                  >TikTok <span>↗</span></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="foot-bottom mono">
+            <span>© 2026 Szianzey Asesor</span>
+            <a href="#top" class="back-top">Back to top ↑</a>
+          </div>
+          <div class="foot-status mono">
+            <span class="status-left"
+              ><span class="dot"></span>Based in Davao, PH
+              <span id="footClock">—</span></span
+            >
+          </div>
+        </section>
       </div>
-      <!-- ================= END CINEMATIC ZONE ================= -->
 
-      <section class="plain shell" id="projects">
-        <div class="sec-head">
-          <span class="sec-index mono">04</span>
-          <h2 class="sec-title">Projects &amp; Skills</h2>
-          <div class="sec-note">Programming, video editing, and graphic design.</div>
-        </div>
-
-        <div class="subhead mono">Programming</div>
-        <div class="prog-list block-space">
-          <div class="prog-row">
-            <div>
-              <h3>Student Organization Management System</h3>
-              <p>Case study write-up in progress.</p>
-            </div>
-            <div class="badge">Placeholder</div>
-          </div>
-          <div class="prog-row">
-            <div>
-              <h3>Real Estate Management System</h3>
-              <p>Java console application — write-up in progress.</p>
-            </div>
-            <div class="badge">Placeholder</div>
-          </div>
-        </div>
-
-        <div class="subhead mono">Video Editing</div>
-      </section>
-
-      <!-- 3D WALL — VIDEO EDITING -->
-      <section class="wall-stage" id="wall-video" style="height:280vh;">
-        <div class="wall-sticky">
-          <div class="shell">
-            <div class="wall-viewport">
-              <div class="wall-track" id="trackVideo"></div>
-            </div>
-            <div class="wall-hint mono">Scroll to move through the wall →</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="plain shell" style="padding-top:0; border-top:none;">
-        <div class="subhead mono">Graphic Designing</div>
-      </section>
-
-      <!-- 3D WALL — GRAPHIC DESIGN -->
-      <section class="wall-stage" id="wall-design" style="height:340vh;">
-        <div class="wall-sticky">
-          <div class="shell">
-            <div class="wall-viewport">
-              <div class="wall-track" id="trackDesign"></div>
-            </div>
-            <div class="wall-hint mono">Scroll to move through the wall →</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="plain shell" id="toolkit">
-        <div class="sec-head">
-          <span class="sec-index mono">05</span>
-          <h2 class="sec-title">Toolkit</h2>
-          <div class="sec-note">What I'm reaching for, day to day.</div>
-        </div>
-        <div class="tool-grid">
-          <div class="tool"><div class="tool-mark">Fg</div><div class="tool-name">Figma</div></div>
-          <div class="tool"><div class="tool-mark">Pp</div><div class="tool-name">Photopea</div></div>
-          <div class="tool"><div class="tool-mark">Ps</div><div class="tool-name">Photoshop</div></div>
-          <div class="tool"><div class="tool-mark">Ca</div><div class="tool-name">Canva</div></div>
-          <div class="tool"><div class="tool-mark">Dr</div><div class="tool-name">DaVinci Resolve</div></div>
-          <div class="tool"><div class="tool-mark">Cc</div><div class="tool-name">CapCut</div></div>
-        </div>
-      </section>
-
-      <section class="plain shell" id="certs">
-        <div class="sec-head">
-          <span class="sec-index mono">06</span>
-          <h2 class="sec-title">Certificates</h2>
-          <div class="sec-note">Coursework I've completed and can vouch for.</div>
-        </div>
-        <div class="tile-grid">
-          <a class="tile" href="https://www.coursera.org/account/accomplishments/verify/8EN1PRPW1VWH" target="_blank" rel="noopener">
-            <div class="tile-idx">01</div>
-            <div class="tile-cat">Coursera</div>
-            <div class="tile-name">Introduction to Generative AI</div>
-            <div class="tile-go">↗</div>
-          </a>
-          <a class="tile" href="https://coursera.org/share/4ed7325cf662ac18bd33f424269bc6c7" target="_blank" rel="noopener">
-            <div class="tile-idx">02</div>
-            <div class="tile-cat">Coursera</div>
-            <div class="tile-name">Generative AI for Everyone</div>
-            <div class="tile-go">↗</div>
-          </a>
-          <a class="tile" href="https://www.credly.com/badges/bbf0d403-10f6-438e-8156-b830e0c73a32/linked_in_profile" target="_blank" rel="noopener">
-            <div class="tile-idx">03</div>
-            <div class="tile-cat">Credly</div>
-            <div class="tile-name">Artificial Intelligence Essentials V2</div>
-            <div class="tile-go">↗</div>
-          </a>
-        </div>
-      </section>
-
-      <section class="plain shell" id="contact">
-        <div class="sec-head">
-          <span class="sec-index mono">07</span>
-          <h2 class="sec-title">Contact</h2>
-          <div class="sec-note">Student projects, competitions, or just a good idea.</div>
-        </div>
-        <div class="contact-grid">
-          <div>
-            <p class="foot-line">Have something in mind? <span class="accent">Let's talk.</span></p>
-            <form class="contact-form" id="contactForm">
-              <input type="text" name="name" placeholder="Your name" required>
-              <input type="email" name="email" placeholder="Your email" required>
-              <textarea name="message" rows="4" placeholder="What's the project?" required></textarea>
-              <button type="submit">Send message ↗</button>
-            </form>
-            <p class="contact-note">Opens your email app with this message pre-filled — nothing is sent from this page directly.</p>
-          </div>
-          <div>
-            <div class="subhead mono">Or reach me directly</div>
-            <div class="contact-socials">
-              <a href="https://github.com/szi-asesor" target="_blank" rel="noopener">GitHub <span>↗</span></a>
-              <a href="https://www.linkedin.com/in/szianzey-f-asesor-4172483a7/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
-              <a href="https://www.facebook.com/szianzey.asesor" target="_blank" rel="noopener">Facebook <span>↗</span></a>
-              <a href="https://www.instagram.com/szianzey/" target="_blank" rel="noopener">Instagram <span>↗</span></a>
-              <a href="https://www.tiktok.com/@one_hee" target="_blank" rel="noopener">TikTok <span>↗</span></a>
-            </div>
-          </div>
-        </div>
-        <div class="foot-bottom mono">
-          <span>© 2026 Szianzey Asesor</span>
-          <a href="#top" class="back-top">Back to top ↑</a>
-        </div>
-      </section>
-
+      <div
+        class="content-inverted"
+        id="contentInverted"
+        aria-hidden="true"
+      ></div>
     </div>
 
-    <div class="content-inverted" id="contentInverted" aria-hidden="true"></div>
-  </div>
-
-<script src="https://szi-asesor.github.io/PORTFOLIO/script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
