@@ -141,15 +141,6 @@
   }
 
   function embedFor(url) {
-    var tiktok = url.match(/tiktok\.com\/[^/]+\/video\/(\d+)/);
-    if (tiktok) {
-      return (
-        "https://www.tiktok.com/player/v1/" +
-        tiktok[1] +
-        "?controls=1&description=0&music_info=0"
-      );
-    }
-
     var instagram = url.match(/instagram\.com\/reel\/([^/?#]+)/);
     if (instagram) {
       return "https://www.instagram.com/reel/" + instagram[1] + "/embed/";
@@ -163,6 +154,30 @@
     }
 
     return "";
+  }
+
+  function tiktokEmbedMarkup(url) {
+    var match = url.match(/tiktok\.com\/(@[^/]+)\/video\/(\d+)/);
+    if (!match) return "";
+
+    return (
+      '<div class="wall-tiktok"><blockquote class="tiktok-embed" cite="' +
+      url +
+      '" data-video-id="' +
+      match[2] +
+      '" data-embed-from="oembed" style="max-width: 100%; min-width: 0; margin: 0;"><section><a target="_blank" rel="noopener" href="https://www.tiktok.com/' +
+      match[1] +
+      '?refer=embed">View this edit on TikTok</a></section></blockquote></div>'
+    );
+  }
+
+  function loadTikTokEmbedScript() {
+    if (!document.querySelector(".tiktok-embed")) return;
+    if (document.querySelector('script[src="https://www.tiktok.com/embed.js"]')) return;
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.tiktok.com/embed.js";
+    document.body.appendChild(script);
   }
 
   function buildWall(trackId, items, label, icon) {
@@ -192,7 +207,8 @@
           pad(i + 1) +
           '" loading="lazy"></a>'
         : "";
-      var embed = imageSrc
+      var tiktokMarkup = imageSrc ? "" : tiktokEmbedMarkup(url);
+      var embed = imageSrc || tiktokMarkup
         ? ""
         : typeof item === "string"
           ? embedFor(url)
@@ -208,13 +224,14 @@
         : "";
       html +=
         '<article class="wall-card' +
-        (imageSrc || embed ? " has-media" : "") +
+        (imageSrc || tiktokMarkup || embed ? " has-media" : "") +
         '" style="--card-ratio: ' +
         ratio +
         ";" +
         width +
         '">' +
         imageMarkup +
+        tiktokMarkup +
         embedMarkup +
         '<div class="wc-idx mono">' +
         pad(i + 1) +
@@ -242,6 +259,7 @@
 
   buildWall("trackVideo", videos, "Edit", "▶");
   buildWall("trackDesign", designs, "Design", "✎");
+  loadTikTokEmbedScript();
 
   function ratioValue(value) {
     var parts = value.split("/");

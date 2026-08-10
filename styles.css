@@ -732,6 +732,20 @@ body.flooded .eb-visual {
   height: 100%;
   border: 0;
 }
+.wall-tiktok {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+.wall-tiktok .tiktok-embed,
+.wall-tiktok iframe {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
 .wall-image-link {
   position: absolute;
   inset: 0;
