@@ -13,11 +13,7 @@
 }
 @media (max-width: 720px) {
   :root {
-    --edge: max(
-      20px,
-      env(safe-area-inset-left),
-      env(safe-area-inset-right)
-    );
+    --edge: max(20px, env(safe-area-inset-left), env(safe-area-inset-right));
     --anchor-space: 0px;
   }
 }

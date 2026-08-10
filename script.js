@@ -173,7 +173,8 @@
 
   function loadTikTokEmbedScript() {
     if (!document.querySelector(".tiktok-embed")) return;
-    if (document.querySelector('script[src="https://www.tiktok.com/embed.js"]')) return;
+    if (document.querySelector('script[src="https://www.tiktok.com/embed.js"]'))
+      return;
     var script = document.createElement("script");
     script.async = true;
     script.src = "https://www.tiktok.com/embed.js";
@@ -208,11 +209,12 @@
           '" loading="lazy"></a>'
         : "";
       var tiktokMarkup = imageSrc ? "" : tiktokEmbedMarkup(url);
-      var embed = imageSrc || tiktokMarkup
-        ? ""
-        : typeof item === "string"
-          ? embedFor(url)
-          : item.embed || embedFor(url);
+      var embed =
+        imageSrc || tiktokMarkup
+          ? ""
+          : typeof item === "string"
+            ? embedFor(url)
+            : item.embed || embedFor(url);
       var embedMarkup = embed
         ? '<div class="wall-embed"><iframe src="' +
           embed +
