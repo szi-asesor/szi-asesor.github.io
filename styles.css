@@ -350,6 +350,23 @@ body.flooded .sec-note {
     margin-left: 0;
     max-width: 100%;
   }
+
+  /* Desktop scrolljacking causes adjacent stages to overlap on short screens. */
+  .stage {
+    height: auto !important;
+  }
+  .stage + .stage {
+    margin-top: 72px;
+  }
+  .stage .stage-sticky {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding-block: 56px;
+    justify-content: flex-start;
+  }
 }
 
 /* ================= CINEMATIC / SCROLLJACK ZONE ================= */
