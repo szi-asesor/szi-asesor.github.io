@@ -1074,6 +1074,7 @@ body.flooded .tool {
   justify-content: center;
   font-weight: 700;
   font-size: 14px;
+  overflow: hidden;
   transition:
     background-color var(--dur) ease,
     color var(--dur) ease;
@@ -1083,6 +1084,7 @@ body.flooded .tool {
   width: 100%; /* Makes the image fill the container width */
   height: 100%; /* Makes the image fill the container height */
   object-fit: cover; /* Ensures the image scales properly without distorting */
+  border-radius: inherit;
 }
 
 body.flooded .tool-mark {
@@ -1097,6 +1099,40 @@ body.flooded .tool-mark {
 /* ---------- contact ---------- */
 #contact {
   padding-bottom: 70px;
+  --bg: #f2f1eb;
+  --text: #000000;
+  --accent: #0033ff;
+  --grey: #9a988c;
+  --card-line: rgba(0, 0, 0, 0.12);
+  position: relative;
+  isolation: isolate;
+  background: var(--bg);
+  color: var(--text);
+}
+#contact::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--bg);
+}
+body.flooded #contact {
+  border-color: var(--card-line);
+}
+body.flooded #contact .accent {
+  color: var(--accent);
+}
+body.flooded #contact .sec-note,
+body.flooded #contact .subhead,
+body.flooded #contact .contact-note {
+  color: var(--grey);
+}
+body.flooded #contact .subhead::after {
+  background: var(--card-line);
 }
 .contact-grid {
   display: grid;

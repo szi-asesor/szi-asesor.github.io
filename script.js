@@ -47,84 +47,84 @@
   ];
   var designs = [
     {
-      url: "https://www.facebook.com/photo/?fbid=26896801116637132&set=pcb.26896801989970378", //Yuu Nishinoya.png
-      imageSrc: "images/Yuu Nishinoya.png",
+      url: "https://www.facebook.com/photo/?fbid=26896801116637132&set=pcb.26896801989970378", //Yuu Nishinoya.jpg
+      imageSrc: "images/Yuu Nishinoya.jpg",
       ratio: "4 / 5",
     },
     {
-      url: "https://www.facebook.com/photo/?fbid=26896801766637067&set=pcb.26896801989970378", //David - DBZ.png
-      imageSrc: "images/David - DBZ.png",
+      url: "https://www.facebook.com/photo/?fbid=26896801766637067&set=pcb.26896801989970378", //David - DBZ.jpg
+      imageSrc: "images/David - DBZ.jpg",
       ratio: "4 / 5",
     },
     {
-      url: "https://www.facebook.com/szianzey.asesor/posts/pfbid0PjeYpwDPskMYPr52JffCpcEXw2HBMQRLDepxrnjfHX2VpxcP6jBYjgGpqkkXPau2l", //Ophelia.png
+      url: "https://www.facebook.com/szianzey.asesor/posts/pfbid0PjeYpwDPskMYPr52JffCpcEXw2HBMQRLDepxrnjfHX2VpxcP6jBYjgGpqkkXPau2l", //Ophelia.jpg
       imageSrc: "images/Ophelia.jpg",
-      ratio: "16 / 12",
+      ratio: "16 / 9",
     },
     {
-      url: "https://www.facebook.com/photo.php?fbid=25860808020236452&set=pb.100002018240117.-2207520000&type=3", //Godzilla.png
-      imageSrc: "images/Godzilla.png",
+      url: "https://www.facebook.com/photo.php?fbid=25860808020236452&set=pb.100002018240117.-2207520000&type=3", //Godzilla.jpg
+      imageSrc: "images/Godzilla.jpg",
       ratio: "8 / 10",
     },
     {
-      url: "https://www.facebook.com/szianzey.asesor/posts/pfbid02dShKJfWKHxKZKy52VX3Lyt2epFmu7jwZaAxgRoaQmYmMMjFLt7NdMJ8KPnZ8bU58l", //An Untitled Poster.png
-      imageSrc: "images/An Untitled Poster.png",
+      url: "https://www.facebook.com/szianzey.asesor/posts/pfbid02dShKJfWKHxKZKy52VX3Lyt2epFmu7jwZaAxgRoaQmYmMMjFLt7NdMJ8KPnZ8bU58l", //An Untitled Poster.jpg
+      imageSrc: "images/An Untitled Poster.jpg",
       ratio: "4 / 5",
     },
     {
-      url: "https://www.facebook.com/photo.php?fbid=25650545141262742&set=a.477377415672862&type=3&rdid=3vVJYMo1qBIzXf32&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1SA6nnn771%2F#", //DANIELLE.png
-      imageSrc: "images/DANIELLE.png",
+      url: "https://www.facebook.com/photo.php?fbid=25650545141262742&set=a.477377415672862&type=3&rdid=3vVJYMo1qBIzXf32&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1SA6nnn771%2F#", //DANIELLE.jpg
+      imageSrc: "images/DANIELLE.jpg",
       ratio: "1 / 1.414",
     },
     {
-      url: "https://www.facebook.com/photo.php?fbid=25650544811262775&set=pb.100002018240117.-2207520000&type=3", //HAERIN.png
-      imageSrc: "images/HAERIN.png",
+      url: "https://www.facebook.com/photo.php?fbid=25650544811262775&set=pb.100002018240117.-2207520000&type=3", //HAERIN.jpg
+      imageSrc: "images/HAERIN.jpg",
       ratio: "1 / 1.414",
     },
     {
-      url: "https://www.facebook.com/photo.php?fbid=25650544401262816&set=pb.100002018240117.-2207520000&type=3", //MINJI.png
-      imageSrc: "images/MINJI.png",
+      url: "https://www.facebook.com/photo.php?fbid=25650544401262816&set=pb.100002018240117.-2207520000&type=3", //MINJI.jpg
+      imageSrc: "images/MINJI.jpg",
       ratio: "1 / 1.414",
     },
     {
-      url: "https://www.facebook.com/photo.php?fbid=25650544147929508&set=pb.100002018240117.-2207520000&type=3", //HANNI.png
-      imageSrc: "images/HANNI.png",
+      url: "https://www.facebook.com/photo.php?fbid=25650544147929508&set=pb.100002018240117.-2207520000&type=3", //HANNI.jpg
+      imageSrc: "images/HANNI.jpg",
       ratio: "1 / 1.414",
     },
     {
-      url: "https://www.facebook.com/photo.php?fbid=25650543877929535&set=a.477377415672862&type=3", //HYEIN.png
-      imageSrc: "images/HYEIN.png",
+      url: "https://www.facebook.com/photo.php?fbid=25650543877929535&set=a.477377415672862&type=3", //HYEIN.jpg
+      imageSrc: "images/HYEIN.jpg",
       ratio: "1 / 1.414",
     },
     {
-      url: "https://www.facebook.com/szianzey.asesor/posts/pfbid026CnrdSLaZ9gBs46fnAAMTYwKiVdUdz8CtoHqpzJZVNHQsAA7gXhHbjzVpTUfwscdl", //new balance.png
+      url: "https://www.facebook.com/szianzey.asesor/posts/pfbid026CnrdSLaZ9gBs46fnAAMTYwKiVdUdz8CtoHqpzJZVNHQsAA7gXhHbjzVpTUfwscdl", //new balance.jpg
       imageSrc: "images/new balance.jpg",
       ratio: "4 / 5",
     },
     {
       url: "https://www.facebook.com/share/p/1EeSmx3JtB/",
-      imageSrc: "images/hanni poster.png",
+      imageSrc: "images/hanni poster.jpg",
       ratio: "1 / 1",
-    }, //hanni poster.png
+    }, //hanni poster.jpg
     {
       url: "https://www.facebook.com/share/p/1Bh9fBsLBd/",
-      imageSrc: "images/Roman.png",
+      imageSrc: "images/Roman.jpg",
       ratio: "4 / 5",
-    }, //Roman.png
+    }, //Roman.jpg
     {
       url: "https://canva.link/6ief1z24lwpp1wz",
-      imageSrc: "images/LE MANS.png",
+      imageSrc: "images/LE MANS.jpg",
       ratio: "9 / 16",
-    }, //LE MANS.png
+    }, //LE MANS.jpg
     {
       url: "https://canva.link/p8bl43bz2k3o9w7",
-      imageSrc: "images/feb 14th.png",
+      imageSrc: "images/feb 14th.jpg",
       ratio: "4 / 5",
-    }, //feb 14th.png
+    }, //feb 14th.jpg
 
     {
-      url: "https://canva.link/w8398jv97qc0cj5", //MOTO-GP.png
-      imageSrc: "images/MOTO-GP.png",
+      url: "https://canva.link/w8398jv97qc0cj5", //MOTO-GP.jpg
+      imageSrc: "images/MOTO-GP.jpg",
       ratio: "1 / 1.414",
     },
   ];
@@ -473,7 +473,8 @@
     var floodAmount = aboutTop > 0 ? scrollY / aboutTop : 1;
     floodAmount = Math.min(Math.max(floodAmount, 0), 1);
 
-    // Make a hard, physical cut at the divider immediately above Contact.
+    // Keep the work area blue up to the Contact divider. Contact supplies its
+    // own neutral full-width surface, so the visual cut is at that exact line.
     var isFullyFlooded = floodAmount >= 1 && scrollY < contactTop;
 
     document.documentElement.style.setProperty(
